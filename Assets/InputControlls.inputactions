@@ -1,0 +1,22 @@
+{
+    "name": "InputControlls",
+    "maps": [
+        {
+            "name": "ActionNew",
+            "id": "dab84da7-58c8-4ce5-b0ec-74a8d7efcbcb",
+            "actions": [
+                {
+                    "name": "Action1",
+                    "type": "Value",
+                    "id": "df2f60d2-ce47-4584-8024-07c0ef29888e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": []
+        }
+    ],
+    "controlSchemes": []
+}
