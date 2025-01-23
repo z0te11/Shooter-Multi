@@ -5,17 +5,17 @@ using Zenject;
 
 public class SpawnSystem : MonoBehaviour
 {
-    private Settings settings;
+    private ISettings _settings;
 
     [Inject]
-    public void Construct(Settings settings)
+    public void Construct(ISettings settings)
     {
-        this.settings = settings;
+        this._settings = settings;
     }
 
     public void StartSpawnEnemy()
     {
-        if (settings.enemy != null) StartCoroutine(WaitAndSpawning(settings.enemy, settings.delaySpawn));
+        if (_settings.Enemy != null) StartCoroutine(WaitAndSpawning(_settings.Enemy, _settings.DelaySpawn));
     }
 
     private IEnumerator WaitAndSpawning(GameObject go, float waitTime)
@@ -33,14 +33,14 @@ public class SpawnSystem : MonoBehaviour
         if (!go.GetComponent<Unit>()) return;
 
         var newUnit = Instantiate(go, pos, Quaternion.identity);
-        newUnit.GetComponent<Health>().SetHealth(settings.healthEnemy);
-        newUnit.GetComponent<DamageAbilityTarget>().SetDamage(settings.damageEnemy);
+        newUnit.GetComponent<Health>().SetHealth(_settings.HealthEnemy);
+        newUnit.GetComponent<DamageAbilityTarget>().SetDamage(_settings.DamageEnemy);
 
     }
 
     public GameObject SpawnPlayer(PlayerStats playerStats)
     {
-        var newPlayer = Instantiate(settings.player, new Vector3(0,0,0), Quaternion.identity);
+        var newPlayer = Instantiate(_settings.Player, new Vector3(0,0,0), Quaternion.identity);
         newPlayer.GetComponent<PlayerHealth>().SetHealth(playerStats.health);
         newPlayer.GetComponent<ShootAbility>().SetDamage(playerStats.damage);
         return newPlayer;
