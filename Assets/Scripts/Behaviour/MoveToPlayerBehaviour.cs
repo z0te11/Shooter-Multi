@@ -11,6 +11,7 @@ public class MoveToPlayerBehaviour : BehaviourComponent
         navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         if (GameManager.currnetPlayer != null)
         {
+            if (GameManager.currnetPlayer.GetComponent<InvisibleAbility>().isInvisible) return 0f;
             _player = GameManager.currnetPlayer.transform;
             return 1f;
         } 
