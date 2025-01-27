@@ -1647,7 +1647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4186925322972517638, guid: 0e0e12e024ce6de449ed69fc11c9f9b3, type: 3}
-  shootDelay: 0.01
+  shootDelay: 0.5
   _damage: 0
   _shootEffect: {fileID: 1364721190298166145, guid: b25c8d577b1e59c418a3db28055e4bbd, type: 3}
 --- !u!114 &4929383183472309220
