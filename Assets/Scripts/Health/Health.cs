@@ -6,6 +6,7 @@ public class Health : MonoBehaviour, IType
 {
     public AbilityType Type { get; set; }
     [SerializeField] protected int _health;
+    [SerializeField] protected AnimController animController;
 
     public virtual int Healths
     {
@@ -26,6 +27,7 @@ public class Health : MonoBehaviour, IType
     {
         Healths -= damage;
         Debug.Log("GetDamage" + _health);
+        if (animController != null) animController.GetHit();
         if (_health < 0) Die();
     }
 
@@ -37,6 +39,6 @@ public class Health : MonoBehaviour, IType
 
     public virtual void Die()
     {
-        Destroy(gameObject);
+        if (animController != null) animController.Die();
     }
 }

@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
     {
         var pos = this.transform.position;
         var newPos = new Vector3(dataPos.x * speed * Time.deltaTime * 50, 0, dataPos.y * speed * Time.deltaTime * 50);
-        _rb.velocity = newPos;
+        if (_rb != null) _rb.velocity = newPos;
         if (isRotate) Rotate(newPos);
     }
 

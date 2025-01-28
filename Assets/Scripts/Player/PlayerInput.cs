@@ -7,6 +7,8 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] public Movement moveComp;
     [SerializeField] public Ability mainAbilityComp;
     [SerializeField] public Ability secondAbilityComp;
+    [SerializeField] public PlayerAnimController animController;
+
     private void Update()
     {
         if (mainAbilityComp != null && UserInputSystem.mainAbilityInput > 0) mainAbilityComp.Execute();
@@ -15,6 +17,10 @@ public class PlayerInput : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (moveComp != null) moveComp.Move(UserInputSystem.moveInput);
+        if (moveComp != null)
+        {
+            moveComp.Move(UserInputSystem.moveInput);
+            if (animController != null) animController.MovePlayer(UserInputSystem.moveInput, moveComp.speed);
+        } 
     }
 }

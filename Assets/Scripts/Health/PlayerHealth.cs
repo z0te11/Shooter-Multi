@@ -18,6 +18,8 @@ public class PlayerHealth : Health
     public override void Die()
     {
         base.Die();
+        GetComponent<PlayerInput>().enabled = false;
+        GetComponent<Collider>().enabled = false;
     }
 
 }
