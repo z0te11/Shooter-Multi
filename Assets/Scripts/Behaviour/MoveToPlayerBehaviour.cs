@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MoveToPlayerBehaviour : BehaviourComponent
 {
+    [SerializeField] private AnimController animController;
     private Transform _player;
     private UnityEngine.AI.NavMeshAgent navMeshAgent;
     public override float Evaluate()
@@ -13,12 +14,13 @@ public class MoveToPlayerBehaviour : BehaviourComponent
         {
             if (GameManager.currnetPlayer.GetComponent<InvisibleAbility>().isInvisible) return 0f;
             _player = GameManager.currnetPlayer.transform;
-            return 1f;
+            return 0.8f;
         } 
         return 0f;
     }
     public override void Behave()
     {
         navMeshAgent.destination = _player.position;
+        if (animController != null) animController.Move(true);
     }
 }

@@ -6,10 +6,11 @@ public class CollisionHandler : MonoBehaviour
 {
     protected AbilityTarget[] _abilitysTarget;
     protected Ability[] _abilitys;
-    [SerializeField] protected bool isAlwaysUseAbilities = false;
-    [SerializeField] protected bool isCanInteractWithPlayer = false;
-    [SerializeField] protected bool isInteractOnlyWithPlayer = false;
-    [SerializeField] protected bool isInteractOnlyWithUnit = false;
+    [SerializeField] public bool isAlwaysUseAbilities = false;
+    [SerializeField] public bool isCanInteractWithPlayer = false;
+    [SerializeField] public bool isInteractOnlyWithPlayer = false;
+    [SerializeField] public bool isInteractOnlyWithUnit = false;
+    [SerializeField] public bool isCanInteractWithAll = false;
     protected List<AbilityType> abilityTypeList = new List<AbilityType>();
 
 
@@ -32,6 +33,8 @@ public class CollisionHandler : MonoBehaviour
 
     protected void TryInteract(GameObject go)
     {
+        if (isCanInteractWithAll) Interact(go);
+
         bool isPlayer = go.GetComponent<PlayerUnit>();
 
         if (isPlayer == false && isInteractOnlyWithPlayer == true) return;
