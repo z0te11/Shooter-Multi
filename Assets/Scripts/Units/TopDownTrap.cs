@@ -6,8 +6,10 @@ using DG.Tweening;
 public class TopDownTrap : StaticUnit
 {
     [SerializeField] public Vector3 newPos;
+
     [SerializeField] private float _timeToBack;
     [SerializeField] private CollisionHandler _collisionHandler;
+    
     private Vector3 _startPos;
 
 
