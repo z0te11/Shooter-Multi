@@ -19,5 +19,6 @@ public class GameSceneInstaller : MonoInstaller
                     .WithArguments(settings.Player, settings.Enemy)
                     .NonLazy();
         }
+        Container.Bind<LoadDataManager>().AsSingle().NonLazy();
      }
 }
