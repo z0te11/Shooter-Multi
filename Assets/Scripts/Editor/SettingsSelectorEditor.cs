@@ -8,7 +8,7 @@ public class SettingsSelectorEditor : Editor
 {
     private string[] settList;
     private SerializedProperty _settings;
-    public int index = 0;
+    private int index = 0;
 
     private void OnEnable()
     {
@@ -17,6 +17,7 @@ public class SettingsSelectorEditor : Editor
 
     public override void OnInspectorGUI()
     {
+        base.OnInspectorGUI();
         settList = AssetDatabase.FindAssets("t:settings");
         string[] nameSettings = settList;
         for (int i = 0; i < nameSettings.Length; i++)
@@ -30,7 +31,7 @@ public class SettingsSelectorEditor : Editor
         index = EditorGUILayout.Popup(index, settList);
         if (GUILayout.Button("Use"))
         {
-            _settings.objectReferenceValue = AssetDatabase.LoadAssetAtPath<Settings>(AssetDatabase.GUIDToAssetPath(settList[index]));
+            _settings.objectReferenceValue = AssetDatabase.LoadAssetAtPath<Settings>(settList[index]);
         }
         serializedObject.ApplyModifiedProperties();
     }
