@@ -797,6 +797,7 @@ GameObject:
   - component: {fileID: 632826148}
   - component: {fileID: 632826147}
   - component: {fileID: 632826149}
+  - component: {fileID: 632826150}
   m_Layer: 0
   m_Name: '[Systems]'
   m_TagString: Untagged
@@ -857,6 +858,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 825e460ccf6738e45b599015333dc322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &632826150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632826144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8719c844818b3448a7940efd2b6aac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeSettings: {fileID: 11400000, guid: 95dd820d2735b444cb0d21fa815e46f8, type: 2}
 --- !u!1 &663795859
 GameObject:
   m_ObjectHideFlags: 0
@@ -2264,7 +2278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca618515dc093f44ae81bc9fa53ce16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 95dd820d2735b444cb0d21fa815e46f8, type: 2}
+  settingsSelector: {fileID: 632826150}
   useDefault: 0
 --- !u!4 &1822443276 stripped
 Transform:
