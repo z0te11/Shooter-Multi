@@ -17,7 +17,7 @@ public class CameraFollow : MonoBehaviour
 
     private void StartFolowPlayer()
     {
-        _player = GameManager.currnetPlayer.transform;
+        _player = GameManager.instance.currentPlayer.transform;
     }
 
     private void Update()

@@ -7,12 +7,20 @@ public class ShootAbility : Ability, IBuff
 {
     public GameObject bullet;
     public float shootDelay;
-
     [SerializeField] private float _damage;
     [SerializeField] private GameObject _shootEffect;
 
+    public Action<float> onPlayerDamageChanged;
+
     private float _shootTime = float.MinValue;
     private bool _isReflectBuff = false;
+
+    public float Damage
+    {
+        get { return _damage; }
+        set { _damage = value;
+              onPlayerDamageChanged?.Invoke(_damage);}
+    }
 
     public override void Execute()
     {
@@ -48,8 +56,13 @@ public class ShootAbility : Ability, IBuff
         _isReflectBuff = true;
     }
 
-    public void SetDamage(float damage)
+    public void SetDamage(float value)
     {
-        _damage = damage;
+        Damage = value;
+    }
+
+    public void UpDamage(float value)
+    {
+        Damage += value;
     }
 }

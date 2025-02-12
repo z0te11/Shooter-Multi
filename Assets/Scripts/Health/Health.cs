@@ -5,6 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour, IType
 {
     public AbilityType Type { get; set; }
+    [SerializeField] protected OnDieManager onDieManager;
     [SerializeField] protected int _health;
     [SerializeField] protected AnimController animController;
 
@@ -40,5 +41,6 @@ public class Health : MonoBehaviour, IType
     public virtual void Die()
     {
         if (animController != null) animController.Die();
+        if (onDieManager != null) onDieManager.Execute();
     }
 }

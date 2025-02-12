@@ -10,10 +10,10 @@ public class MoveToPlayerBehaviour : BehaviourComponent
     public override float Evaluate()
     {
         navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        if (GameManager.currnetPlayer != null)
+        if (GameManager.instance.currentPlayer != null)
         {
-            if (GameManager.currnetPlayer.GetComponent<InvisibleAbility>().isInvisible) return 0f;
-            _player = GameManager.currnetPlayer.transform;
+            if (GameManager.instance.currentPlayer.GetComponent<InvisibleAbility>().isInvisible) return 0f;
+            _player = GameManager.instance.currentPlayer.transform;
             return 0.8f;
         } 
         return 0f;

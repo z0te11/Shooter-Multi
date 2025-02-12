@@ -7,13 +7,18 @@ using Zenject;
 public class GameManager : MonoBehaviour
 {
     public static Action onGameStarted;
-    public static GameObject currnetPlayer;
-    private static SpawnSystem _spawnSystem;
+    public static GameManager instance;
+    public GameObject currentPlayer;
     public float roundTime;
     public int roundDifficluty;
+    public InventarItems inventar;
+    private SpawnSystem _spawnSystem;
+
+
     
     private void Awake()
     {
+        if (instance == null) instance = this;
         _spawnSystem = GetComponent<SpawnSystem>();
     }
 
@@ -22,10 +27,11 @@ public class GameManager : MonoBehaviour
         //Pause;
     }
 
-    public static void Play(PlayerStats playerStats)
+    public void Play(PlayerStats playerStats)
     {
         //UnPause;
-        currnetPlayer = _spawnSystem.SpawnPlayer(playerStats);
+        currentPlayer = _spawnSystem.SpawnPlayer(playerStats);
+        currentPlayer.GetComponent<CharacterData>().inventory = inventar;
         _spawnSystem.StartSpawnEnemy();
         onGameStarted?.Invoke();
     }

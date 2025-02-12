@@ -1042,6 +1042,9 @@ GameObject:
   - component: {fileID: 1049408038858717277}
   - component: {fileID: 3846854194723664114}
   - component: {fileID: 5172560147342412244}
+  - component: {fileID: 6397091527804803720}
+  - component: {fileID: 9138341045789972886}
+  - component: {fileID: 1650047763000487474}
   m_Layer: 0
   m_Name: ZombieEnemy
   m_TagString: Untagged
@@ -1174,6 +1177,7 @@ MonoBehaviour:
   isCanInteractWithPlayer: 1
   isInteractOnlyWithPlayer: 1
   isInteractOnlyWithUnit: 0
+  isCanInteractWithAll: 0
 --- !u!114 &2368340278956077524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1233,8 +1237,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 421df57ccb121a04baba442b791086b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDieManager: {fileID: 6397091527804803720}
   _health: 20
   animController: {fileID: 3846854194723664114}
+--- !u!114 &6397091527804803720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008217247924006420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e60208728e845c48ad29c5a94e5f648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dieActions:
+  - {fileID: 9138341045789972886}
+  - {fileID: 1650047763000487474}
+--- !u!114 &9138341045789972886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008217247924006420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda64ab1f227c4343bc8d59067be5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experianceValue: 15
+--- !u!114 &1650047763000487474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008217247924006420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec89e82612d8cc4eb8613de10c4ffdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropSettings: {fileID: 11400000, guid: 2b5312f8ed8e78642ae7a9150fbe9772, type: 2}
 --- !u!1 &4159168562421201612
 GameObject:
   m_ObjectHideFlags: 0

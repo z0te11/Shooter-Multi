@@ -8,6 +8,7 @@ using System;
 public class GoogleDriveManager: MonoBehaviour
 {
     [SerializeField] private bool downloadFromGDrive;
+    [SerializeField] private GameManager gameManager;
     public PlayerStats playerStats;
 
     private readonly string dataUrl = "https://drive.google.com/uc?export=download&id=1GlWVLG-g8J-tCgdkWn6l4mUlSl9lZ-A7";
@@ -77,7 +78,7 @@ public class GoogleDriveManager: MonoBehaviour
 
     private void SendDataToGameManager()
     {
-        GameManager.Play(playerStats);
+        gameManager.Play(playerStats);
     }
 
     /*

@@ -5,5 +5,6 @@ using UnityEngine;
 public enum AbilityType
 {
     Health,
-    Buff
+    Buff,
+    Exp
 }

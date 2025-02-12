@@ -86,6 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56d02a9108fc8714d99b7e1584e97820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animController: {fileID: 0}
 --- !u!114 &6029610909275288739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93000886bd755b74ea640057a745d8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animController: {fileID: 0}
 --- !u!114 &8245936042787123846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +128,7 @@ MonoBehaviour:
   isCanInteractWithPlayer: 1
   isInteractOnlyWithPlayer: 1
   isInteractOnlyWithUnit: 0
+  isCanInteractWithAll: 0
 --- !u!114 &3098014363731432329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 421df57ccb121a04baba442b791086b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDieManager: {fileID: 0}
+  _health: 0
+  animController: {fileID: 0}
 --- !u!1 &4625668648649942546
 GameObject:
   m_ObjectHideFlags: 0

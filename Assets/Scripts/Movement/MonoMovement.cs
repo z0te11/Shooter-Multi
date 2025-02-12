@@ -6,7 +6,7 @@ public class MonoMovement : Movement
 {
     public override void Move(Vector2 dataPos)
     {
-        _rb.velocity = transform.forward * speed * Time.deltaTime * 50;
+        _rb.velocity = transform.forward * Speed * Time.deltaTime * 50;
     }
 
 }

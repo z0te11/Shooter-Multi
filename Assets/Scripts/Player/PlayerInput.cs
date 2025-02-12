@@ -20,7 +20,7 @@ public class PlayerInput : MonoBehaviour
         if (moveComp != null)
         {
             moveComp.Move(UserInputSystem.moveInput);
-            if (animController != null) animController.MovePlayer(UserInputSystem.moveInput, moveComp.speed);
+            if (animController != null) animController.MovePlayer(UserInputSystem.moveInput, moveComp.Speed);
         } 
     }
 }
