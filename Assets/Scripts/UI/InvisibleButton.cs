@@ -7,9 +7,9 @@ public class InvisibleButton : MonoBehaviour
     private InvisibleAbility _invisAbility;
     public void UseInvisible()
     {
-        if (GameManager.currnetPlayer != null)
+        if (GameManager.instance.currentPlayer != null)
         {
-            if (_invisAbility == null) _invisAbility = GameManager.currnetPlayer.GetComponent<InvisibleAbility>();
+            if (_invisAbility == null) _invisAbility = GameManager.instance.currentPlayer.GetComponent<InvisibleAbility>();
             _invisAbility.Execute();
         }
     }

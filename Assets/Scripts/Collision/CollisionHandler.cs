@@ -49,7 +49,6 @@ public class CollisionHandler : MonoBehaviour
 
     protected void Interact(GameObject go)
     {
-        Debug.Log(go);
         if (CanIntearctWithObject(go))
         {
             UseAbilitysTargets(go);
