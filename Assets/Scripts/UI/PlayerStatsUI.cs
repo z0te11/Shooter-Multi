@@ -16,15 +16,16 @@ public class PlayerStatsUI : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.onGameStarted += SubEventPlayer;
+        SpawnSystem.onPlayerSpawn += SubEventPlayer;
     }
 
     private void OnDisable()
     {
-        _playerHealth.onPlayerHealthChanged -= ShowHpPlayer;
-        _playerShoot.onPlayerDamageChanged -= ShowDamagePlayer;
-        _playerMove.onPlayerSpeedChanged -= ShowSpeedPlayer;
-         _playerExp.onPlayerLevelChanged -= ShowLevelPlayer;
+        if (_playerHealth != null) _playerHealth.onPlayerHealthChanged -= ShowHpPlayer;
+        if (_playerShoot != null) _playerShoot.onPlayerDamageChanged -= ShowDamagePlayer;
+        if (_playerMove != null) _playerMove.onPlayerSpeedChanged -= ShowSpeedPlayer;
+        if (_playerExp != null) _playerExp.onPlayerLevelChanged -= ShowLevelPlayer;
+        SpawnSystem.onPlayerSpawn -= SubEventPlayer;
     }
 
     private void SubEventPlayer()
@@ -56,7 +57,7 @@ public class PlayerStatsUI : MonoBehaviour
         }  
     }
 
-    private void ShowHpPlayer(int value)
+    private void ShowHpPlayer(float value)
     {
         _textHp.text = "Hp " + value.ToString();
     }

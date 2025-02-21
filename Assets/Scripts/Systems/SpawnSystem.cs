@@ -1,16 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using Zenject;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class SpawnSystem : MonoBehaviour
 {
+    public static Action onPlayerSpawn;
+    [SerializeField] private Transform[] _spawnsForPlayer;
     private ISettings _settings;
 
+    public static SpawnSystem instance;
     [Inject]
     public void Construct(ISettings settings)
     {
-        this._settings = settings;
+        _settings = settings;
+    }
+
+    private void Awake()
+    {
+        if (instance == null) instance = this;
     }
 
     public void StartSpawnEnemy()
@@ -32,17 +43,55 @@ public class SpawnSystem : MonoBehaviour
     {
         if (!go.GetComponent<Unit>()) return;
 
-        var newUnit = Instantiate(go, pos, Quaternion.identity);
+        var newUnit = PhotonNetwork.Instantiate(go.name, pos, Quaternion.identity);
         newUnit.GetComponent<Health>().SetHealth(_settings.HealthEnemy);
         newUnit.GetComponent<DamageAbilityTarget>().SetDamage(_settings.DamageEnemy);
 
     }
 
-    public GameObject SpawnPlayer(PlayerStats playerStats)
+    public void SpawnPlayer(PlayerStats playerStats)
     {
-        var newPlayer = Instantiate(_settings.Player, new Vector3(0,0,0), Quaternion.identity);
-        newPlayer.GetComponent<PlayerHealth>().SetHealth(playerStats.health);
-        newPlayer.GetComponent<ShootAbility>().SetDamage(playerStats.damage);
-        return newPlayer;
+        var id = PhotonNetwork.LocalPlayer.ActorNumber;
+        if (id > (_spawnsForPlayer.Length + 1))
+        {
+            Debug.LogError("NO SPAWN POINT");
+            return;
+        }
+        else
+        {
+            var newPlayer = PhotonNetwork.Instantiate(_settings.Player.name, _spawnsForPlayer[id - 1].position, Quaternion.identity);
+            newPlayer.GetComponent<PlayerHealth>().SetHealth(playerStats.health);
+            newPlayer.GetComponent<ShootAbility>().SetDamage(playerStats.damage);
+            GameManager.instance.currentPlayer = newPlayer;
+        }
+
+        onPlayerSpawn?.Invoke();
+    }
+
+    public void SpawnBullet(GameObject go, Transform trans, float damage, TypeOfBuff typeOfBuff)
+    {
+        if (go != null)
+        {
+            var t = trans;
+
+            var newBullet = PhotonNetwork.Instantiate(go.name, t.position, t.rotation);
+            newBullet.GetComponent<DamageAbilityTarget>().damage = damage;
+
+            if (typeOfBuff == TypeOfBuff.Reflect)
+            {
+                Destroy(newBullet.GetComponent<DestroyerAbility>());
+                ReflectAbility ra = newBullet.AddComponent(typeof(ReflectAbility)) as ReflectAbility;
+            }
+        }
+    }
+
+    public void SpawnPickUp(GameObject go, Transform trans)
+    {
+        if (go != null)
+        {
+            var t = trans;
+
+            var newPickUp = PhotonNetwork.Instantiate(go.name, t.position, t.rotation);
+        }        
     }
 }

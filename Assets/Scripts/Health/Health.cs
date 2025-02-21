@@ -6,10 +6,10 @@ public class Health : MonoBehaviour, IType
 {
     public AbilityType Type { get; set; }
     [SerializeField] protected OnDieManager onDieManager;
-    [SerializeField] protected int _health;
+    [SerializeField] protected float _health;
     [SerializeField] protected AnimController animController;
 
-    public virtual int Healths
+    public virtual float Healths
     {
         get { return _health; }
         set { _health = value; }
@@ -24,7 +24,7 @@ public class Health : MonoBehaviour, IType
     {
         Healths = health;
     }
-    public virtual void GetDamage(int damage)
+    public virtual void GetDamage(float damage)
     {
         Healths -= damage;
         Debug.Log("GetDamage" + _health);
@@ -32,7 +32,7 @@ public class Health : MonoBehaviour, IType
         if (_health < 0) Die();
     }
 
-    public virtual void GetHeal(int heal)
+    public virtual void GetHeal(float heal)
     {
         Healths += heal;
         Debug.Log("GetHeal" + _health);

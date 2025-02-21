@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerHealth : Health
 {
-    public Action<int> onPlayerHealthChanged;
-    public override int Healths
+    public Action<float> onPlayerHealthChanged;
+    public override float Healths
     {
         get { return _health; }
         set { _health = value;

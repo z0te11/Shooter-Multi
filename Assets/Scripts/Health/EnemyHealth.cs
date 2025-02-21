@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class EnemyHealth : Health
 {
@@ -9,6 +10,13 @@ public class EnemyHealth : Health
         base.Die();
         GetComponent<BehaviourManager>().enabled = false;
         GetComponent<Collider>().enabled = false;
-        Destroy(gameObject, 5f);
+        StartCoroutine(Dieing(5f));
+        
+    }
+
+    private IEnumerator Dieing(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        PhotonNetwork.Destroy(gameObject);
     }
 }

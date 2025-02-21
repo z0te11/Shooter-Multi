@@ -13,8 +13,12 @@ public class ShootAbility : Ability, IBuff
     public Action<float> onPlayerDamageChanged;
 
     private float _shootTime = float.MinValue;
-    private bool _isReflectBuff = false;
+    private TypeOfBuff typeOfBuff;
 
+    private void Awake()
+    {
+        typeOfBuff = TypeOfBuff.None;
+    }
     public float Damage
     {
         get { return _damage; }
@@ -32,28 +36,16 @@ public class ShootAbility : Ability, IBuff
 
     private void Shoot()
     {
-        if (bullet != null)
+        if (_shootEffect != null) 
         {
-            var t = transform;
-
-            if (_shootEffect != null) 
-            {
-                var bewShootEffect = Instantiate(_shootEffect, t.position, t.rotation, this.transform);
-            }
-            
-            var newBullet = Instantiate(bullet, t.position, t.rotation);
-
-            if (_isReflectBuff)
-            {
-                Destroy(newBullet.GetComponent<DestroyerAbility>());
-                ReflectAbility ra = newBullet.AddComponent(typeof(ReflectAbility)) as ReflectAbility;
-            }
+            var bewShootEffect = Instantiate(_shootEffect, transform.position, transform.rotation, this.transform);
         }
+        SpawnSystem.instance.SpawnBullet(bullet, this.transform, Damage, typeOfBuff);
     }
 
     public void BuffAbility(TypeOfBuff typeOfBuff)
     {
-        _isReflectBuff = true;
+        this.typeOfBuff = typeOfBuff;
     }
 
     public void SetDamage(float value)

@@ -78,7 +78,7 @@ public class GoogleDriveManager: MonoBehaviour
 
     private void SendDataToGameManager()
     {
-        gameManager.Play(playerStats);
+        gameManager.SetPlayerStats(playerStats);
     }
 
     /*

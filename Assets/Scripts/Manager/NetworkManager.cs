@@ -7,7 +7,7 @@ using Photon.Realtime;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
-    private void Start()
+    private void Awake()
     {
         PhotonNetwork.ConnectUsingSettings();
     }
@@ -24,6 +24,20 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        Debug.Log(PhotonNetwork.CurrentRoom.PlayerCount);
+        var id = PhotonNetwork.LocalPlayer.ActorNumber;
+        Debug.Log("Joined Room with " + PhotonNetwork.CurrentRoom.PlayerCount + " players and ID is " + id);
+        GameManager.instance.Play();
+        
+    }
+
+    public void SayHelllo()
+    {
+        this.photonView.RPC("Hello", RpcTarget.All, (byte)PhotonNetwork.LocalPlayer.ActorNumber);
+    }
+
+    [PunRPC]
+    public void Hello(byte playerId)
+    {
+        Debug.Log($"Player Id {playerId} said Hello!");
     }
 }
