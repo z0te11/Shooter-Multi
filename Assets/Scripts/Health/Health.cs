@@ -15,7 +15,7 @@ public class Health : MonoBehaviour, IType
         set { _health = value; }
     }
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         Type = AbilityType.Health;
     }

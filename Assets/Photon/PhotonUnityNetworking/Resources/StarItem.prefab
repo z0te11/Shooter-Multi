@@ -12,9 +12,13 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2244188124831146596, guid: 65811ad4f9aff254d867b2d437d36728, type: 3}
+      propertyPath: observableSearch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2814608833607290775, guid: 65811ad4f9aff254d867b2d437d36728, type: 3}
       propertyPath: m_Name
-      value: StarItem Variant
+      value: StarItem
       objectReference: {fileID: 0}
     - target: {fileID: 3069510331274656260, guid: 65811ad4f9aff254d867b2d437d36728, type: 3}
       propertyPath: m_Pivot.x

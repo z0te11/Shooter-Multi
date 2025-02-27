@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5158722177326659131, guid: 5d7c6218e6c32ad4db70105ac17eecd6, type: 3}
+      propertyPath: observableSearch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 259028783170500717, guid: 5d7c6218e6c32ad4db70105ac17eecd6, type: 3}
       propertyPath: m_Name
       value: UpDamagePickUp

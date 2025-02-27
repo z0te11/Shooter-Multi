@@ -7,6 +7,14 @@ public class DestroyerAbility : Ability
 {
     public override void Execute()
     {
-        PhotonNetwork.Destroy(gameObject);
+        if (CheckPhotonMine())
+        {
+            PhotonNetwork.Destroy(this.gameObject);
+        }
+    }
+
+    private bool CheckPhotonMine()
+    {
+        return GetComponent<PhotonView>().IsMine;
     }
 }

@@ -10,7 +10,8 @@ public class EnemyHealth : Health
         base.Die();
         GetComponent<BehaviourManager>().enabled = false;
         GetComponent<Collider>().enabled = false;
-        StartCoroutine(Dieing(5f));
+        if (CheckPhotonMine()) PhotonNetwork.Destroy(gameObject);
+        //StartCoroutine(Dieing(5f));
         
     }
 
@@ -19,4 +20,10 @@ public class EnemyHealth : Health
         yield return new WaitForSeconds(waitTime);
         PhotonNetwork.Destroy(gameObject);
     }
+
+    private bool CheckPhotonMine()
+    {
+        return GetComponent<PhotonView>().IsMine;
+    }
+
 }

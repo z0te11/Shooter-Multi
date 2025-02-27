@@ -14,7 +14,7 @@ public class CollisionHandler : MonoBehaviour
     protected List<AbilityType> abilityTypeList = new List<AbilityType>();
 
 
-    protected void Start()
+    protected void Awake()
     {
         _abilitysTarget = GetComponents<AbilityTarget>();
         _abilitys = GetComponents<Ability>();

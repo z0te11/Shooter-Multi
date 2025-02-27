@@ -10,11 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2814608833607290775, guid: 36a80bb14bd5da8498fa7a32e87e9456, type: 3}
       propertyPath: m_Name
-      value: QuestionItem Variant
+      value: QuestionItem
       objectReference: {fileID: 0}
     - target: {fileID: 3060189352857380297, guid: 36a80bb14bd5da8498fa7a32e87e9456, type: 3}
       propertyPath: sceneViewId
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060189352857380297, guid: 36a80bb14bd5da8498fa7a32e87e9456, type: 3}
+      propertyPath: observableSearch
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3069510331274656260, guid: 36a80bb14bd5da8498fa7a32e87e9456, type: 3}
       propertyPath: m_Pivot.x

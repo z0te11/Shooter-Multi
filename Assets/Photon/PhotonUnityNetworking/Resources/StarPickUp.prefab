@@ -12,9 +12,13 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6697099787105875848, guid: 6f297852ad469fb49a8f83e50a5012e1, type: 3}
+      propertyPath: observableSearch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 259028783170500717, guid: 6f297852ad469fb49a8f83e50a5012e1, type: 3}
       propertyPath: m_Name
-      value: StarPickUp Variant
+      value: StarPickUp
       objectReference: {fileID: 0}
     - target: {fileID: 4286798372109517201, guid: 6f297852ad469fb49a8f83e50a5012e1, type: 3}
       propertyPath: m_LocalPosition.x

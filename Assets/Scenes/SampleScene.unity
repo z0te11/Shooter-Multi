@@ -156,9 +156,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 430306798}
   - {fileID: 1283145830}
   - {fileID: 1011378056}
-  - {fileID: 430306798}
   m_Father: {fileID: 1190792562}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1270,7 +1270,7 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 3
   OwnershipTransfer: 0
-  observableSearch: 2
+  observableSearch: 1
   ObservedComponents: []
   sceneViewId: 2
   InstantiationId: 0
@@ -1393,7 +1393,6 @@ RectTransform:
   - {fileID: 1320213958}
   - {fileID: 1505428928}
   - {fileID: 1100955218}
-  - {fileID: 2032994441}
   m_Father: {fileID: 1190792562}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2090,9 +2089,9 @@ RectTransform:
   - {fileID: 633166383}
   m_Father: {fileID: 55112905}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -449.7, y: -233.1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -188.40002, y: -185.3}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1011378057
@@ -2622,9 +2621,9 @@ RectTransform:
   - {fileID: 1386369878}
   m_Father: {fileID: 55112905}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -211.3, y: -232.5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 196.3, y: -185.3}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1283145831
@@ -3683,6 +3682,7 @@ RectTransform:
   - {fileID: 950904861}
   - {fileID: 449046840}
   - {fileID: 2146998316}
+  - {fileID: 2032994441}
   m_Father: {fileID: 1190792562}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3716,17 +3716,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032994440}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 584741551}
-  m_Father: {fileID: 663795860}
+  m_Father: {fileID: 2030547134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 115.4, y: 98.2}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -324.10004, y: 80.47751}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2032994442
@@ -3890,7 +3890,7 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 3
   OwnershipTransfer: 0
-  observableSearch: 2
+  observableSearch: 1
   ObservedComponents: []
   sceneViewId: 1
   InstantiationId: 0
@@ -4135,6 +4135,10 @@ PrefabInstance:
     - target: {fileID: 3359499166475378006, guid: 558aa3fef93c4d24fa7e17547d4dcc61, type: 3}
       propertyPath: m_Name
       value: TrapTopDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397531294038853533, guid: 558aa3fef93c4d24fa7e17547d4dcc61, type: 3}
+      propertyPath: sceneViewId
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6698440112363776768, guid: 558aa3fef93c4d24fa7e17547d4dcc61, type: 3}
       propertyPath: isCanInteractWithAll

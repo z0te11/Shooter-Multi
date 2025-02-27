@@ -12,9 +12,13 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6885011500492788068, guid: fcd57b7409613a243bbe61f6c6799e72, type: 3}
+      propertyPath: observableSearch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2814608833607290775, guid: fcd57b7409613a243bbe61f6c6799e72, type: 3}
       propertyPath: m_Name
-      value: HealItem Variant
+      value: HealItem
       objectReference: {fileID: 0}
     - target: {fileID: 3069510331274656260, guid: fcd57b7409613a243bbe61f6c6799e72, type: 3}
       propertyPath: m_Pivot.x

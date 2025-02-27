@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6841769728898081523, guid: 31b78fb1c3f3a7845a3a11be0fce7a74, type: 3}
+      propertyPath: observableSearch
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -26,7 +26,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         var id = PhotonNetwork.LocalPlayer.ActorNumber;
         Debug.Log("Joined Room with " + PhotonNetwork.CurrentRoom.PlayerCount + " players and ID is " + id);
-        GameManager.instance.Play();
+        GameManager.instance.Play(id);
         
     }
 

@@ -54,31 +54,79 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 715236368329122799, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
       propertyPath: observableSearch
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 715236368329122799, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
       propertyPath: ObservedComponents.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4008217247924006420, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
       propertyPath: m_Name
       value: ZombieEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 7997883593479671032, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
-      propertyPath: m_SynchronizeParameters.Array.data[0].SynchronizeType
+      propertyPath: ShowLayerWeightsInspector
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997883593479671032, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
+      propertyPath: m_SynchronizeLayers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997883593479671032, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997883593479671032, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].Name
+      value: Walking
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997883593479671032, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].Type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997883593479671032, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].Name
+      value: Hit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997883593479671032, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].Type
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997883593479671032, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Name
+      value: Die
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997883593479671032, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Type
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997883593479671032, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].Name
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997883593479671032, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].Type
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997883593479671032, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
+      propertyPath: m_SynchronizeLayers.Array.data[0].SynchronizeType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997883593479671032, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].SynchronizeType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7997883593479671032, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
       propertyPath: m_SynchronizeParameters.Array.data[1].SynchronizeType
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7997883593479671032, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
       propertyPath: m_SynchronizeParameters.Array.data[2].SynchronizeType
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7997883593479671032, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
       propertyPath: m_SynchronizeParameters.Array.data[3].SynchronizeType
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

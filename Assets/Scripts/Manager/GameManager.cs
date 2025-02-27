@@ -33,12 +33,12 @@ public class GameManager : MonoBehaviour
         _stats = stats;
     }
 
-    public void Play()
+    public void Play(int playerID)
     {
         //UnPause;
         spawnSystem.SpawnPlayer(_stats);
         currentPlayer.GetComponent<CharacterData>().inventory = inventar;
-        spawnSystem.StartSpawnEnemy();
+        if (playerID == 1) spawnSystem.StartSpawnEnemy();
         onGameStarted?.Invoke();
     }
 

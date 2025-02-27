@@ -10,11 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 259028783170500717, guid: f60c4fe556816e74b94e5d9aa17101a6, type: 3}
       propertyPath: m_Name
-      value: HealPickUp Variant
+      value: HealPickUp
       objectReference: {fileID: 0}
     - target: {fileID: 2474230590371756203, guid: f60c4fe556816e74b94e5d9aa17101a6, type: 3}
       propertyPath: sceneViewId
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2474230590371756203, guid: f60c4fe556816e74b94e5d9aa17101a6, type: 3}
+      propertyPath: observableSearch
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4286798372109517201, guid: f60c4fe556816e74b94e5d9aa17101a6, type: 3}
       propertyPath: m_LocalPosition.x

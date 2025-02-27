@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 372311465025268494, guid: 61dadd56a8ef60345af10a1c5d496fa3, type: 3}
+      propertyPath: observableSearch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2814608833607290775, guid: 61dadd56a8ef60345af10a1c5d496fa3, type: 3}
       propertyPath: m_Name
       value: UpDamageItem
