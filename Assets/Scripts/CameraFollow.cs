@@ -7,12 +7,12 @@ public class CameraFollow : MonoBehaviour
     private Transform _player;
     private void OnEnable()
     {
-        GameManager.onGameStarted += StartFolowPlayer;
+        SpawnSystem.onPlayerSpawn += StartFolowPlayer;
     }
 
     private void OnDisable()
     {
-        GameManager.onGameStarted -= StartFolowPlayer;
+        SpawnSystem.onPlayerSpawn -= StartFolowPlayer;
     }
 
     private void StartFolowPlayer()

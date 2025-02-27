@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DamageAbilityTarget : AbilityTarget
 {
-    public int damage = 10;
+    public float damage = 10;
     
     public void SetDamage(int damage)
     {

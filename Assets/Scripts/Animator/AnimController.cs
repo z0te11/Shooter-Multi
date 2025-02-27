@@ -26,5 +26,10 @@ public class AnimController : MonoBehaviour
         animator.SetTrigger("Die");
     }
 
+    public virtual void Attack()
+    {
+        animator.SetTrigger("Attack");
+    }
+
 
 }

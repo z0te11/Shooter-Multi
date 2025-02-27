@@ -12,14 +12,15 @@ public class GameManager : MonoBehaviour
     public float roundTime;
     public int roundDifficluty;
     public InventarItems inventar;
-    private SpawnSystem _spawnSystem;
+    public SpawnSystem spawnSystem;
+    private PlayerStats _stats;
 
 
     
     private void Awake()
     {
         if (instance == null) instance = this;
-        _spawnSystem = GetComponent<SpawnSystem>();
+        spawnSystem = GetComponent<SpawnSystem>();
     }
 
     public void Start()
@@ -27,12 +28,17 @@ public class GameManager : MonoBehaviour
         //Pause;
     }
 
-    public void Play(PlayerStats playerStats)
+    public void SetPlayerStats(PlayerStats stats)
+    {
+        _stats = stats;
+    }
+
+    public void Play(int playerID)
     {
         //UnPause;
-        currentPlayer = _spawnSystem.SpawnPlayer(playerStats);
+        spawnSystem.SpawnPlayer(_stats);
         currentPlayer.GetComponent<CharacterData>().inventory = inventar;
-        _spawnSystem.StartSpawnEnemy();
+        if (playerID == 1) spawnSystem.StartSpawnEnemy();
         onGameStarted?.Invoke();
     }
 

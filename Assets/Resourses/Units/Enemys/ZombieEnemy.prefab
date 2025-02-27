@@ -1036,8 +1036,8 @@ GameObject:
   - component: {fileID: 2512834662661089592}
   - component: {fileID: 3732634443391959870}
   - component: {fileID: 7583220681752958941}
+  - component: {fileID: -3414900735606967163}
   - component: {fileID: 3919862465445553429}
-  - component: {fileID: 6221158768727303740}
   - component: {fileID: 2368340278956077524}
   - component: {fileID: 1049408038858717277}
   - component: {fileID: 3846854194723664114}
@@ -1045,6 +1045,9 @@ GameObject:
   - component: {fileID: 6397091527804803720}
   - component: {fileID: 9138341045789972886}
   - component: {fileID: 1650047763000487474}
+  - component: {fileID: 715236368329122799}
+  - component: {fileID: 4152522073843429239}
+  - component: {fileID: 7997883593479671032}
   m_Layer: 0
   m_Name: ZombieEnemy
   m_TagString: Untagged
@@ -1149,6 +1152,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animController: {fileID: 3846854194723664114}
+--- !u!114 &-3414900735606967163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008217247924006420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06fbb4457a399c44a0fbdb68d3172c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animController: {fileID: 3846854194723664114}
+  attackDelay: 4
 --- !u!114 &3919862465445553429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1161,23 +1178,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b60f39ebac4ce47a27c3f40b18e691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6221158768727303740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4008217247924006420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c0c0f4456a5eaf408722a5dbfdb4df2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAlwaysUseAbilities: 1
-  isCanInteractWithPlayer: 1
-  isInteractOnlyWithPlayer: 1
-  isInteractOnlyWithUnit: 0
-  isCanInteractWithAll: 0
 --- !u!114 &2368340278956077524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1281,6 +1281,77 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropSettings: {fileID: 11400000, guid: 2b5312f8ed8e78642ae7a9150fbe9772, type: 2}
+--- !u!114 &715236368329122799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008217247924006420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 0
+  ObservedComponents:
+  - {fileID: 4152522073843429239}
+  - {fileID: 7997883593479671032}
+  - {fileID: 0}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &4152522073843429239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008217247924006420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &7997883593479671032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008217247924006420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 0
+    Name: Walking
+  - Type: 9
+    SynchronizeType: 0
+    Name: Hit
+  - Type: 9
+    SynchronizeType: 0
+    Name: Die
+  - Type: 9
+    SynchronizeType: 0
+    Name: Attack
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &4159168562421201612
 GameObject:
   m_ObjectHideFlags: 0
