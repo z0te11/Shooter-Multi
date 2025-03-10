@@ -16,11 +16,9 @@ public class GameManager : MonoBehaviour
     private PlayerStats _stats;
 
 
-    
     private void Awake()
     {
         if (instance == null) instance = this;
-        spawnSystem = GetComponent<SpawnSystem>();
     }
 
     public void Start()
@@ -28,15 +26,11 @@ public class GameManager : MonoBehaviour
         //Pause;
     }
 
-    public void SetPlayerStats(PlayerStats stats)
-    {
-        _stats = stats;
-    }
 
     public void Play(int playerID)
     {
         //UnPause;
-        spawnSystem.SpawnPlayer(_stats);
+        spawnSystem.SpawnPlayer();
         currentPlayer.GetComponent<CharacterData>().inventory = inventar;
         if (playerID == 1) spawnSystem.StartSpawnEnemy();
         onGameStarted?.Invoke();

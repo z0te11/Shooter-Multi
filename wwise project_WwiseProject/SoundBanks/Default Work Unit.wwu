@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F7D285AE-C31E-4AD0-B300-7A75C8A4C9D6}" SchemaVersion="123">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{F7D285AE-C31E-4AD0-B300-7A75C8A4C9D6}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main" ID="{D89FF81F-2C3A-43B4-8BE7-AF4A193E52FD}">
+					<ObjectInclusionList>
+						<ObjectRef Name="PickUpItem" ID="{3E1573FE-8E4C-4159-95F2-E540495D3513}" WorkUnitID="{BE630C66-619D-4D18-988B-033C0B609FB8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="LvlUp" ID="{57F390D1-3984-41E7-980C-830BA2F0170D}" WorkUnitID="{BE630C66-619D-4D18-988B-033C0B609FB8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="TakeBuff" ID="{43242C72-8A50-4A2D-9AAB-89FF078E2B97}" WorkUnitID="{BE630C66-619D-4D18-988B-033C0B609FB8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="StartMusic" ID="{DC168227-E3B3-4AF4-9626-3AE74A473A1F}" WorkUnitID="{BE630C66-619D-4D18-988B-033C0B609FB8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Shoot" ID="{F8CE52DE-CE7F-4B07-A7E2-CEC54D320B9F}" WorkUnitID="{BE630C66-619D-4D18-988B-033C0B609FB8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HitEnemy" ID="{0B1EB72A-233A-4C23-948F-DD434EB7CBF5}" WorkUnitID="{BE630C66-619D-4D18-988B-033C0B609FB8}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

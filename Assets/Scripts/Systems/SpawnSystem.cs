@@ -49,7 +49,7 @@ public class SpawnSystem : MonoBehaviour
 
     }
 
-    public void SpawnPlayer(PlayerStats playerStats)
+    public void SpawnPlayer( )
     {
         var id = PhotonNetwork.LocalPlayer.ActorNumber;
         if (id > (_spawnsForPlayer.Length + 1))
@@ -60,8 +60,6 @@ public class SpawnSystem : MonoBehaviour
         else
         {
             var newPlayer = PhotonNetwork.Instantiate(_settings.Player.name, _spawnsForPlayer[id - 1].position, Quaternion.identity);
-            newPlayer.GetComponent<PlayerHealth>().SetHealth(playerStats.health);
-            newPlayer.GetComponent<ShootAbility>().SetDamage(playerStats.damage);
             GameManager.instance.currentPlayer = newPlayer;
         }
 

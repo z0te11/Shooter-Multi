@@ -1498,6 +1498,8 @@ GameObject:
   - component: {fileID: 6286729637033996494}
   - component: {fileID: 4180193753967778001}
   - component: {fileID: 4455411503547333947}
+  - component: {fileID: -914961249518613204}
+  - component: {fileID: 8819787301245655501}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1620,6 +1622,7 @@ MonoBehaviour:
   moveComp: {fileID: 6694226596945212045}
   mainAbilityComp: {fileID: 2863362465902344621}
   secondAbilityComp: {fileID: 4929383183472309220}
+  animController: {fileID: 0}
 --- !u!114 &6694226596945212045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1632,7 +1635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702f18d564e478f4fb2b7942c4012055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  _speed: 0
   isRotate: 1
 --- !u!114 &2863362465902344621
 MonoBehaviour:
@@ -1676,7 +1679,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ca5297c648bcc4292a82dfe21d7c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDieManager: {fileID: 0}
   _health: 10
+  animController: {fileID: 0}
 --- !u!114 &4180193753967778001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1705,6 +1710,59 @@ MonoBehaviour:
   durationInvis: 4
   isInvisible: 0
   _invisibleShader: {fileID: -6465566751694194690, guid: cde8c19c1caf0f04cab5478f2121462f, type: 3}
+--- !u!114 &-914961249518613204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6433830047777696677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647275a647a26e343bf144173aa081a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  usePositionOffsetData: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  scalingFactor: 1
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
+--- !u!114 &8819787301245655501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6433830047777696677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d108d9a254e20584b9bb7d701f3c14d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: 
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  useCallbacks: 0
+  stopSoundOnDestroy: 1
+  Callbacks: []
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
 --- !u!1 &6454908013007690825
 GameObject:
   m_ObjectHideFlags: 0

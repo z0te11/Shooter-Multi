@@ -1,0 +1,16 @@
+Event	ID	Name			Wwise Object Path	Notes
+	675593335	TakeBuff			\Default Work Unit\TakeBuff	
+	705923028	HitEnemy			\Default Work Unit\HitEnemy	
+	2833319138	LvlUp			\Default Work Unit\LvlUp	
+	3016565752	PickUpItem			\Default Work Unit\PickUpItem	
+	3038207054	Shoot			\Default Work Unit\Shoot	
+	3827058668	StartMusic			\Default Work Unit\StartMusic	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	89250571	popadanie-zapuschennogo-topora-v-tsel	G:\Git\Game\Game\wwise project_WwiseProject\.cache\D3\{D3750528-FD64-83E6-153C-780E2FCCE8B9}.wem		\Actor-Mixer Hierarchy\Default Work Unit\popadanie-zapuschennogo-topora-v-tsel		126304
+	119606889	DM-CGS-07	G:\Git\Game\Game\wwise project_WwiseProject\.cache\09\{099C8946-6EFD-6C23-B0A9-A69B1CD5C176}.wem		\Actor-Mixer Hierarchy\Default Work Unit\DM-CGS-07		51676
+	139222621	steel-blood-20240607-010052	G:\Git\Game\Game\wwise project_WwiseProject\.cache\D3\{D38C53DB-E071-0C02-966E-2E322F8F5277}.wem		\Actor-Mixer Hierarchy\Default Work Unit\steel-blood-20240607-010052		23026272
+	293907686	DM-CGS-21	G:\Git\Game\Game\wwise project_WwiseProject\.cache\87\{87AEF704-0B3A-9E6E-E543-AF189671B1DD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\DM-CGS-21		21512
+	823340777	DM-CGS-12	G:\Git\Game\Game\wwise project_WwiseProject\.cache\D9\{D9A5F5D1-413F-9FF6-B255-A2341348540B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\DM-CGS-12		334768
+	1050031828	DM-CGS-49	G:\Git\Game\Game\wwise project_WwiseProject\.cache\6F\{6F486914-04F4-3205-B3D2-AAEF3160996A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\DM-CGS-49		398168
+

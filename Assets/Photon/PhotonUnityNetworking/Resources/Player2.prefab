@@ -1141,8 +1141,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ca5297c648bcc4292a82dfe21d7c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 257174d9e65a45d4db327bed05b986aa, type: 2}
   onDieManager: {fileID: 0}
-  _health: 10
+  _health: 100
   animController: {fileID: 8896007037528564834}
 --- !u!114 &-889139737960610191
 MonoBehaviour:
@@ -1226,6 +1230,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect: {fileID: 5222947168175713178, guid: ad3b62113b8034f4e859b4e299c8d362, type: 3}
+  lvlUpEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e925a91eb079a1e448c3829f8df98e50, type: 2}
 --- !u!114 &8586079435368830579
 MonoBehaviour:
   m_ObjectHideFlags: 0

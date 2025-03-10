@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZombieEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5172560147342412244, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
+      propertyPath: hitEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 257174d9e65a45d4db327bed05b986aa, type: 2}
     - target: {fileID: 7997883593479671032, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
       propertyPath: ShowLayerWeightsInspector
       value: 0
