@@ -16,4 +16,4 @@ MonoBehaviour:
   enemy: {fileID: 4008217247924006420, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
   healthEnemy: 20
   damageEnemy: 15
-  delaySpawn: 10
+  delaySpawn: 5

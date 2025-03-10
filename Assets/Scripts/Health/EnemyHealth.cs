@@ -12,7 +12,6 @@ public class EnemyHealth : Health
         GetComponent<Collider>().enabled = false;
         if (CheckPhotonMine()) PhotonNetwork.Destroy(gameObject);
         //StartCoroutine(Dieing(5f));
-        
     }
 
     private IEnumerator Dieing(float waitTime)

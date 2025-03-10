@@ -67,5 +67,69 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5458391783541205584, guid: 3fe8015d66d97d3459a1572e282ea129, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2583106172535505620}
+    - targetCorrespondingSourceObject: {fileID: 5458391783541205584, guid: 3fe8015d66d97d3459a1572e282ea129, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6164962402078092511}
   m_SourcePrefab: {fileID: 100100000, guid: 3fe8015d66d97d3459a1572e282ea129, type: 3}
+--- !u!1 &3488590856519406423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5458391783541205584, guid: 3fe8015d66d97d3459a1572e282ea129, type: 3}
+  m_PrefabInstance: {fileID: 8910913435972253959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-2583106172535505620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3488590856519406423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647275a647a26e343bf144173aa081a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  usePositionOffsetData: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  scalingFactor: 1
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
+--- !u!114 &-6164962402078092511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3488590856519406423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d108d9a254e20584b9bb7d701f3c14d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: 958ca0ea
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4d179eccfdb708b4aadafdd5d6833b19, type: 2}
+  useCallbacks: 0
+  stopSoundOnDestroy: 0
+  Callbacks: []
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}

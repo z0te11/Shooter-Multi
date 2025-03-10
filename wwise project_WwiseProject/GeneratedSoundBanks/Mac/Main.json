@@ -1,0 +1,157 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "3161908922",
+    "Type": "User",
+    "GUID": "{D89FF81F-2C3A-43B4-8BE7-AF4A193E52FD}",
+    "Language": "SFX",
+    "Hash": "{6403BC22-BDE8-270F-5D1F-14CC07873DD8}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
+    "ShortName": "Main",
+    "Path": "Main.bnk",
+    "Media": [
+     {
+      "Id": "89250571",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "popadanie-zapuschennogo-topora-v-tsel.wav",
+      "CachePath": "D3/{D3750528-FD64-83E6-153C-780E2FCCE8B9}.wem"
+     },
+     {
+      "Id": "119606889",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "DM-CGS-07.wav",
+      "CachePath": "09/{099C8946-6EFD-6C23-B0A9-A69B1CD5C176}.wem"
+     },
+     {
+      "Id": "139222621",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "steel-blood-20240607-010052.wav",
+      "CachePath": "D3/{D38C53DB-E071-0C02-966E-2E322F8F5277}.wem"
+     },
+     {
+      "Id": "293907686",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "DM-CGS-21.wav",
+      "CachePath": "87/{87AEF704-0B3A-9E6E-E543-AF189671B1DD}.wem"
+     },
+     {
+      "Id": "823340777",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "DM-CGS-12.wav",
+      "CachePath": "D9/{D9A5F5D1-413F-9FF6-B255-A2341348540B}.wem"
+     },
+     {
+      "Id": "1050031828",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "DM-CGS-49.wav",
+      "CachePath": "6F/{6F486914-04F4-3205-B3D2-AAEF3160996A}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "705923028",
+      "Name": "HitEnemy",
+      "ObjectPath": "\\Events\\Default Work Unit\\HitEnemy",
+      "GUID": "{0B1EB72A-233A-4C23-948F-DD434EB7CBF5}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.71546483",
+      "DurationMax": "0.71546483",
+      "MediaRefs": [
+       {
+        "Id": "89250571"
+       }
+      ]
+     },
+     {
+      "Id": "2833319138",
+      "Name": "LvlUp",
+      "ObjectPath": "\\Events\\Default Work Unit\\LvlUp",
+      "GUID": "{57F390D1-3984-41E7-980C-830BA2F0170D}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.8972336",
+      "DurationMax": "1.8972336",
+      "MediaRefs": [
+       {
+        "Id": "823340777"
+       }
+      ]
+     },
+     {
+      "Id": "3016565752",
+      "Name": "PickUpItem",
+      "ObjectPath": "\\Events\\Default Work Unit\\PickUpItem",
+      "GUID": "{3E1573FE-8E4C-4159-95F2-E540495D3513}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.29240364",
+      "DurationMax": "0.29240364",
+      "MediaRefs": [
+       {
+        "Id": "119606889"
+       }
+      ]
+     },
+     {
+      "Id": "3038207054",
+      "Name": "Shoot",
+      "ObjectPath": "\\Events\\Default Work Unit\\Shoot",
+      "GUID": "{F8CE52DE-CE7F-4B07-A7E2-CEC54D320B9F}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.256644",
+      "DurationMax": "2.256644",
+      "MediaRefs": [
+       {
+        "Id": "1050031828"
+       }
+      ]
+     },
+     {
+      "Id": "3827058668",
+      "Name": "StartMusic",
+      "ObjectPath": "\\Events\\Default Work Unit\\StartMusic",
+      "GUID": "{DC168227-E3B3-4AF4-9626-3AE74A473A1F}",
+      "DurationType": "OneShot",
+      "DurationMin": "119.928",
+      "DurationMax": "119.928",
+      "MediaRefs": [
+       {
+        "Id": "139222621"
+       }
+      ]
+     },
+     {
+      "Id": "675593335",
+      "Name": "TakeBuff",
+      "ObjectPath": "\\Events\\Default Work Unit\\TakeBuff",
+      "GUID": "{43242C72-8A50-4A2D-9AAB-89FF078E2B97}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.12140589",
+      "DurationMax": "0.12140589",
+      "MediaRefs": [
+       {
+        "Id": "293907686"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{B033EBEC-C082-D252-892D-38324F938D69}"
+ }
+}

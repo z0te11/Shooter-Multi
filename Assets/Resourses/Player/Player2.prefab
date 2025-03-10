@@ -1142,7 +1142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDieManager: {fileID: 0}
-  _health: 10
+  _health: 100
   animController: {fileID: 8896007037528564834}
 --- !u!114 &-889139737960610191
 MonoBehaviour:

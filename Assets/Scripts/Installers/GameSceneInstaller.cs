@@ -3,21 +3,20 @@ using Zenject;
 
 public class GameSceneInstaller : MonoInstaller
 {
-    [SerializeField] private SettingsSelector settingsSelector;
     public bool useDefault;
+    public Settings setts;
 
 
      public override void InstallBindings()
      {
-        var settings = settingsSelector.activeSettings;
         if (!useDefault)
         {
-            Container.Bind<ISettings>().To<Settings>().FromInstance(settings).AsCached();
+            Container.Bind<ISettings>().To<Settings>().FromInstance(setts).AsCached();
         }
         else
         {
             Container.Bind<ISettings>().To<DefaultSettings>().AsSingle()
-                    .WithArguments(settings.Player, settings.Enemy)
+                    .WithArguments(setts.Player, setts.Enemy)
                     .NonLazy();
         }
         Container.Bind<LoadDataManager>().AsSingle().NonLazy();
