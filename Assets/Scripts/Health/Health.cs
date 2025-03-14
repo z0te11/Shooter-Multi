@@ -5,7 +5,6 @@ using UnityEngine;
 public class Health : MonoBehaviour, IType
 {
     public AbilityType Type { get; set; }
-    public AK.Wwise.Event hitEvent = null;
     [SerializeField] protected OnDieManager onDieManager;
     [SerializeField] protected float _health;
     [SerializeField] protected AnimController animController;
@@ -27,7 +26,6 @@ public class Health : MonoBehaviour, IType
     }
     public virtual void GetDamage(float damage)
     {
-        if (hitEvent != null) hitEvent.Post(this.gameObject);
         Healths -= damage;
         Debug.Log("GetDamage" + _health);
         if (animController != null) animController.GetHit();
