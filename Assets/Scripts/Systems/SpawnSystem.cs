@@ -10,6 +10,7 @@ public class SpawnSystem : MonoBehaviour
 {
     public static Action onPlayerSpawn;
     [SerializeField] private Transform[] _spawnsForPlayer;
+    [SerializeField] private Transform[] _spawnsForEnemys;
     private ISettings _settings;
 
     public static SpawnSystem instance;
@@ -34,8 +35,8 @@ public class SpawnSystem : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(waitTime);
-
-            SpawnUnit(go, Utils.GetRandomPos());
+            
+            SpawnUnit(go, _spawnsForEnemys[UnityEngine.Random.Range(0, _spawnsForEnemys.Length)].position);
         }
     }
 

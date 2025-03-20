@@ -539,11 +539,73 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111982414}
   m_CullTransparentMesh: 1
+--- !u!1 &132236650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 132236651}
+  m_Layer: 0
+  m_Name: SpawnEnemy3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &132236651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132236650}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.09, y: 0, z: -19.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &231845041 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7805342126559963825, guid: 162792106db28f54fbdff40f50219908, type: 3}
   m_PrefabInstance: {fileID: 70434922}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &342292307
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 342292308}
+  m_Layer: 0
+  m_Name: SpawnEnemy2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &342292308
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342292307}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.09, y: 0, z: 19.89}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &389401724
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,7 +616,7 @@ GameObject:
   m_Component:
   - component: {fileID: 389401725}
   m_Layer: 0
-  m_Name: Spawn2
+  m_Name: SpawnPlayer2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -883,7 +945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &449046840
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1055,7 +1117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &604393364
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1130,7 +1192,7 @@ GameObject:
   - component: {fileID: 632826152}
   m_Layer: 0
   m_Name: '[Systems]'
-  m_TagString: Untagged
+  m_TagString: Systems
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1165,6 +1227,11 @@ MonoBehaviour:
   _spawnsForPlayer:
   - {fileID: 1103208182}
   - {fileID: 389401725}
+  _spawnsForEnemys:
+  - {fileID: 1415642466}
+  - {fileID: 342292308}
+  - {fileID: 132236651}
+  - {fileID: 1764552020}
 --- !u!114 &632826148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1725,7 +1792,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &950904861
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2034,9 +2101,9 @@ RectTransform:
   - {fileID: 633166383}
   m_Father: {fileID: 55112905}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -188.40002, y: -185.3}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 273.7, y: 102.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1011378057
@@ -2227,7 +2294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1103208182}
   m_Layer: 0
-  m_Name: Spawn1
+  m_Name: SpawnPlayer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2645,9 +2712,9 @@ RectTransform:
   - {fileID: 1386369878}
   m_Father: {fileID: 55112905}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 196.3, y: -185.3}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -266.2, y: 94.899994}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1283145831
@@ -2981,6 +3048,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386369877}
   m_CullTransparentMesh: 1
+--- !u!1 &1415642465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1415642466}
+  m_Layer: 0
+  m_Name: SpawnEnemy1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1415642466
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415642465}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.5, y: 0, z: 19.89}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1504907929
 GameObject:
   m_ObjectHideFlags: 0
@@ -3015,10 +3113,10 @@ RectTransform:
   - {fileID: 432783887}
   m_Father: {fileID: 2030547134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 394.4, y: 90}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -80.3, y: 90}
+  m_SizeDelta: {x: 123.786194, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1504907931
 MonoBehaviour:
@@ -3390,6 +3488,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useDefault: 0
   setts: {fileID: 11400000, guid: 95dd820d2735b444cb0d21fa815e46f8, type: 2}
+--- !u!1 &1764552019
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1764552020}
+  m_Layer: 0
+  m_Name: SpawnEnemy4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1764552020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764552019}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.1, y: 0, z: -19.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1822443276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7805342126559963825, guid: 162792106db28f54fbdff40f50219908, type: 3}
@@ -3749,10 +3878,10 @@ RectTransform:
   - {fileID: 584741551}
   m_Father: {fileID: 2030547134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -399.50003, y: 80.47751}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 66.98428, y: 80.47751}
+  m_SizeDelta: {x: 100.21692, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2032994442
 MonoBehaviour:
@@ -4034,10 +4163,10 @@ RectTransform:
   - {fileID: 2084363858}
   m_Father: {fileID: 2030547134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -397.9, y: 24.5}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 66.60846, y: 24.5}
+  m_SizeDelta: {x: 100.21692, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2146998317
 MonoBehaviour:
@@ -4370,5 +4499,9 @@ SceneRoots:
   - {fileID: 94869997}
   - {fileID: 1934074921922319184}
   - {fileID: 1103208182}
+  - {fileID: 1415642466}
+  - {fileID: 342292308}
+  - {fileID: 132236651}
+  - {fileID: 1764552020}
   - {fileID: 389401725}
   - {fileID: 1899651167}
