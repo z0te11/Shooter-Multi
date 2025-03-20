@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using Photon.Pun;
 
 public class PlayerHealth : Health
 {
@@ -23,6 +24,12 @@ public class PlayerHealth : Health
         base.Die();
         GetComponent<PlayerInput>().enabled = false;
         GetComponent<Collider>().enabled = false;
+        if (CheckPhotonMine()) PhotonNetwork.Destroy(gameObject);
+    }
+
+    private bool CheckPhotonMine()
+    {
+        return GetComponent<PhotonView>().IsMine;
     }
 
 }
