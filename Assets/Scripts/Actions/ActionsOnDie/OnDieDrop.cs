@@ -5,7 +5,6 @@ using UnityEngine;
 public class OnDieDrop : MonoBehaviour, IDie
 {
     public DropSettings dropSettings;
-
     public void OnDie()
     {
         int maxDrop = 1;
