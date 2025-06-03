@@ -6,6 +6,7 @@ public class ShaderSwitcher : MonoBehaviour
 {
     private Shader _defaulShader;
     private Renderer _render;
+    private bool _isSwitched = false;
     private void Start()
     {
         _render = GetComponent<Renderer>();
@@ -14,11 +15,16 @@ public class ShaderSwitcher : MonoBehaviour
 
     public void ChangeShader(Shader newShader)
     {
-        _render.material.shader = newShader;
+        if (!_isSwitched)
+        {
+            _render.material.shader = newShader;
+            _isSwitched = true;
+        }
     }
 
     public void UseDefaultShader()
     {
         _render.material.shader = _defaulShader;
+        _isSwitched = false;
     }
 }

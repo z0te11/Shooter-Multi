@@ -10,7 +10,7 @@ public class PickUpAbility : Ability, IItem
 
     public override void Execute()
     {
-        GameManager.instance.inventar.CreateItem(_UIItem);
+        //GameManager.instance.inventar.CreateItem(_UIItem);
     }
 
 }

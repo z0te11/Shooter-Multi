@@ -16,7 +16,7 @@ public class GameSceneInstaller : MonoInstaller
         else
         {
             Container.Bind<ISettings>().To<DefaultSettings>().AsSingle()
-                    .WithArguments(setts.Player, setts.Enemy)
+                    .WithArguments(setts.Player, setts.Enemys)
                     .NonLazy();
         }
         Container.Bind<LoadDataManager>().AsSingle().NonLazy();

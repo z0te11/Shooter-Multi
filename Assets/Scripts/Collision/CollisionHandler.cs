@@ -35,14 +35,15 @@ public class CollisionHandler : MonoBehaviour
     {
         if (isCanInteractWithAll) Interact(go);
 
-        bool isPlayer = go.GetComponent<PlayerUnit>();
+        bool isStatic = go.GetComponent<StaticObject>();
+        if (isStatic) Interact(go);
 
-        if (isPlayer == false && isInteractOnlyWithPlayer == true) return;
-        if (isPlayer == true && isCanInteractWithPlayer == false) return;
+        bool isPlayer = go.GetComponent<PlayerUnit>();
+        if (!isPlayer && isInteractOnlyWithPlayer) return;
+        if (isPlayer && !isCanInteractWithPlayer) return;
 
         bool isUnit = go.GetComponent<Unit>();
-
-        if (isUnit == false && isInteractOnlyWithUnit == true) return;
+        if (!isUnit && isInteractOnlyWithUnit) return;
 
         Interact(go);
     }

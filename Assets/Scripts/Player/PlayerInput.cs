@@ -7,6 +7,7 @@ public class PlayerInput : MonoBehaviour
 {
     [SerializeField] public Movement moveComp;
     [SerializeField] public Ability mainAbilityComp;
+    [SerializeField] public IReload mainAssistAbilityComp;
     [SerializeField] public Ability secondAbilityComp;
     [SerializeField] public PlayerAnimController animController;
 
@@ -15,12 +16,14 @@ public class PlayerInput : MonoBehaviour
     private void Start()
     {
         isLocalPlayer = GetComponent<PhotonView>().IsMine;
+        mainAssistAbilityComp = GetComponent<IReload>();
     }
 
     private void Update()
     {
         if (!isLocalPlayer) return;
         if (mainAbilityComp != null && UserInputSystem.mainAbilityInput > 0) mainAbilityComp.Execute();
+        if (mainAssistAbilityComp != null && UserInputSystem.mainAssistAbilityInput > 0) mainAssistAbilityComp.Reload();
         if (secondAbilityComp != null && UserInputSystem.secondAbilityInput > 0) secondAbilityComp.Execute();
     }
 

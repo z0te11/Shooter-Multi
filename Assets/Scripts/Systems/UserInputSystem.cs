@@ -7,9 +7,11 @@ public class UserInputSystem : MonoBehaviour
 {
     private InputAction _moveAction;
     private InputAction _mainAbilityAction;
+    private InputAction _mainAssistAbilityAction;
     private InputAction _secondAbilityAction;
     public static Vector2 moveInput;
     public static float mainAbilityInput;
+    public static float mainAssistAbilityInput;
     public static float secondAbilityInput;
 
     private void OnEnable()
@@ -17,6 +19,7 @@ public class UserInputSystem : MonoBehaviour
         SetJostickAction();
         SetMainAbilityAction();
         SetSecondAbilityAction();
+        SetMainAssistAbilityAction();
     }
 
     private void OnDisable()
@@ -24,6 +27,7 @@ public class UserInputSystem : MonoBehaviour
         _moveAction.Disable();
         _mainAbilityAction.Disable();
         _secondAbilityAction.Disable();
+        _mainAssistAbilityAction.Disable();
     }
 
     private void SetJostickAction()
@@ -43,12 +47,22 @@ public class UserInputSystem : MonoBehaviour
 
     private void SetMainAbilityAction()
     {
-        _mainAbilityAction = new InputAction("mainAbility", binding: "<Keyboard>/Space");
+        _mainAbilityAction = new InputAction("mainAbility", binding: "<Mouse>/leftButton");
 
         _mainAbilityAction.performed += context => {mainAbilityInput = context.ReadValue<float>(); };
         _mainAbilityAction.started += context => {mainAbilityInput = context.ReadValue<float>(); };
         _mainAbilityAction.canceled += context => {mainAbilityInput = context.ReadValue<float>(); };
         _mainAbilityAction.Enable();
+    }
+
+    private void SetMainAssistAbilityAction()
+    {
+        _mainAssistAbilityAction = new InputAction("mainAssistAbility", binding: "<Mouse>/rightButton");
+
+        _mainAssistAbilityAction.performed += context => {mainAssistAbilityInput = context.ReadValue<float>(); };
+        _mainAssistAbilityAction.started += context => {mainAssistAbilityInput = context.ReadValue<float>(); };
+        _mainAssistAbilityAction.canceled += context => {mainAssistAbilityInput = context.ReadValue<float>(); };
+        _mainAssistAbilityAction.Enable();
     }
 
     private void SetSecondAbilityAction()
