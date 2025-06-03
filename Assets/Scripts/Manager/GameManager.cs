@@ -9,11 +9,11 @@ public class GameManager : MonoBehaviour
     public static Action onGameStarted;
     public static GameManager instance;
     public GameObject currentPlayer;
-    public float roundTime;
-    public int roundDifficluty;
-    public InventarItems inventar;
-    public SpawnSystem spawnSystem;
+
+    [SerializeField] public SpawnSystem spawnSystem;
+    [SerializeField] public WaveContorller waveController;
     private PlayerStats _stats;
+    private ISettings _settings;
 
 
     private void Awake()
@@ -21,18 +21,17 @@ public class GameManager : MonoBehaviour
         if (instance == null) instance = this;
     }
 
-    public void Start()
+    [Inject]
+    public void Construct(ISettings settings)
     {
-        //Pause;
+        _settings = settings;
     }
-
 
     public void Play(int playerID)
     {
         //UnPause;
         spawnSystem.SpawnPlayer();
-        currentPlayer.GetComponent<CharacterData>().inventory = inventar;
-        if (playerID == 1) spawnSystem.StartSpawnEnemy();
+        if (playerID == 1) waveController.StartWave();
         onGameStarted?.Invoke();
     }
 

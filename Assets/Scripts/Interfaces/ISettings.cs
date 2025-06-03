@@ -5,7 +5,7 @@ using UnityEngine;
 public interface ISettings
 {
     GameObject Player { get; }
-    GameObject Enemy { get; }
+    GameObject[] Enemys { get; }
     int HealthEnemy { get; }
     int DamageEnemy { get; }
     float DelaySpawn { get; }

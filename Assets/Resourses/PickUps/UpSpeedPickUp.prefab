@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4286798372109517201}
   - component: {fileID: 7542625658027841794}
   - component: {fileID: 8292295539284215474}
-  - component: {fileID: 5857529776345270981}
   - component: {fileID: 1007569029275730759}
   - component: {fileID: 6454910482201782013}
   - component: {fileID: 6841769728898081523}
+  - component: {fileID: -4092569633832656462}
   m_Layer: 0
   m_Name: UpSpeedPickUp
   m_TagString: Untagged
@@ -67,19 +67,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbb8f19998d61e40aaea2e84545ddd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5857529776345270981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 259028783170500717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0105cddf7fc316e42bf029d81eaa6d42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _UIItem: {fileID: 2814608833607290775, guid: 8cb378a1d46956f4c8df481b71a3eeb6, type: 3}
 --- !u!135 &1007569029275730759
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -137,6 +124,19 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-4092569633832656462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259028783170500717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f61a2a07251514f8fc7d71370fbdbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 0.1
 --- !u!1001 &2413676764770154183
 PrefabInstance:
   m_ObjectHideFlags: 0

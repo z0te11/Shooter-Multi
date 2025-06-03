@@ -5,46 +5,24 @@ using UnityEngine;
 public class Buff : MonoBehaviour, IType
 {
     public AbilityType Type { get; set; }
+    protected IBuff[] _buffComp;
 
-    protected Ability[] _abilities;
-
-    protected void  Awake()
+    protected void Awake()
     {
         Type = AbilityType.Buff;
     }
 
     protected void Start()
     {
-        _abilities = GetComponents<Ability>();
+        _buffComp = GetComponents<IBuff>();
     }
 
-    public void Execute(TypeOfBuff typeOfBuff)
+    public void Execute(SettingsBuff setBuff)
     {
-        switch (typeOfBuff)
+        for (int i = 0; i < _buffComp.Length; i++)
         {
-            case TypeOfBuff.Reflect:
-            {
-                BuffReflect();
-                break;
-            }
-            default:
-            {
-                return;
-            }
+            _buffComp[i].BuffAbility(setBuff);
         }
     }
-
-    private void BuffReflect()
-    {
-        for (int i = 0; i < _abilities.Length; i++)
-        {
-            var a = _abilities[i].GetComponent<IBuff>();
-            if (a != null)
-            {
-                a.BuffAbility(TypeOfBuff.Reflect);
-            }
-        }
-    }
-
 
 }

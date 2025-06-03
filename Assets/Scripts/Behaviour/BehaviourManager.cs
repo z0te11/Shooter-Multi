@@ -14,7 +14,7 @@ public class BehaviourManager : MonoBehaviour
 
     private void Start()
     {
-        if (_behaviours != null) StartCoroutine(WaitAndEvaluate(1f));
+        if (_behaviours.Length > 0) StartCoroutine(WaitAndEvaluate(0.5f));
     }
 
     private void Update()

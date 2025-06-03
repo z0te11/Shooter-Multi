@@ -8,12 +8,14 @@ public class PlayerPanel : MonoBehaviour
     [SerializeField] private Text _nameScene;
     [SerializeField] private Text _nameLevel;
     [SerializeField] private Text _moneyText;
+    [SerializeField] private Text _numberWaveText;
 
     private void OnEnable()
     {
         LoadDataManager.OnDataSceneLoaded += SetSceneName;
         LoadDataManager.OnDataLevelLoaded += SetLevel;
         MoneyController.OnMoneyChanged += SetMoneyText;
+        WaveContorller.onWaveChanged += SetWaveText;
     }
 
     private void OnDisable()
@@ -21,6 +23,7 @@ public class PlayerPanel : MonoBehaviour
         LoadDataManager.OnDataSceneLoaded -= SetSceneName;
         LoadDataManager.OnDataLevelLoaded -= SetLevel;
         MoneyController.OnMoneyChanged -= SetMoneyText;
+        WaveContorller.onWaveChanged -= SetWaveText;
     }
 
     private void SetSceneName(string sceneName)
@@ -36,5 +39,10 @@ public class PlayerPanel : MonoBehaviour
     private void SetMoneyText(int value)
     {
         _moneyText.text = value.ToString();
+    }
+
+    private void SetWaveText(int value)
+    {
+        _numberWaveText.text = "Волна: " +  value.ToString();
     }
 }

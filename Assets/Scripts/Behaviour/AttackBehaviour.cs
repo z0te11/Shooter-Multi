@@ -5,8 +5,10 @@ using UnityEngine;
 public class AttackBehaviour : BehaviourComponent
 {
     [SerializeField] private AnimController animController;
-    [SerializeField] private float attackDelay;
+    [SerializeField] public float distanceToAttack;
+    [SerializeField] private float _attackDelay;
     protected AbilityTarget[] _abilitysTarget;
+    protected Ability[] _abilitys;
     protected List<AbilityType> abilityTypeList = new List<AbilityType>();
     private Transform _player;
     private float _attackTime = float.MinValue;
@@ -14,6 +16,7 @@ public class AttackBehaviour : BehaviourComponent
     private void Start()
     {
         _abilitysTarget = GetComponents<AbilityTarget>();
+        _abilitys = GetComponents<Ability>();
         for (int i = 0; i < _abilitysTarget.Length; i++)
         {
             abilityTypeList.Add(_abilitysTarget[i].Type);
@@ -28,17 +31,27 @@ public class AttackBehaviour : BehaviourComponent
 
             float dist = Vector3.Distance(_player.position, transform.position);
 
-            if (dist < 1f) return 0.9f;
+            if (dist < distanceToAttack) return 0.9f;
         } 
         return 0f;
     }
+
     public override void Behave()
     {
-        if (Time.time < _attackTime + attackDelay) return;
+        if (_player != null) Rotate(_player);
+        if (Time.time < _attackTime + _attackDelay) return;
 
         _attackTime = Time.time;
         UseAbilitysTargets(_player.gameObject);
+        UseAbilities();
+        Debug.Log("Enemy Attack");
+        if (animController != null) animController.Move(false);
         if (animController != null) animController.Attack();
+    }
+
+    protected void Rotate(Transform target)
+    {
+        transform.LookAt(target);
     }
 
     protected void UseAbilitysTargets(GameObject target)
@@ -46,6 +59,14 @@ public class AttackBehaviour : BehaviourComponent
         for (int i = 0; i < _abilitysTarget.Length; i++)
         {
             if (_abilitysTarget[i] != null) _abilitysTarget[i].Execute(target);
+        }
+    }
+
+    protected void UseAbilities()
+    {
+        for (int i = 0; i < _abilitys.Length; i++)
+        {
+            if (_abilitys[i] != null) _abilitys[i].Execute();
         }
     }
 }

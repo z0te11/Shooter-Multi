@@ -6,17 +6,28 @@ using Photon.Pun;
 
 public class PlayerHealth : Health
 {
-    public Action<float> onPlayerHealthChanged;
+    public Action<float, float> onPlayerHealthChanged;
     public override float Healths
     {
         get { return _health; }
         set { _health = value;
-              onPlayerHealthChanged?.Invoke(_health);}
+              onPlayerHealthChanged?.Invoke(_health, MaxHealths);}
     }
 
-    public override void SetHealth(int health)
+    public override float MaxHealths
     {
-        Healths = health;
+        get { return _maxHealth; }
+        set { _maxHealth = value;
+              onPlayerHealthChanged?.Invoke(Healths, _maxHealth);}
+    }
+
+    private void Start()
+    {
+        if (TryGetComponent<CharacterData>(out CharacterData statsData))
+        {
+            MaxHealths = statsData.playerStatsSettings.livesStat;
+            Healths = statsData.playerStatsSettings.livesStat;
+        }  
     }
 
     public override void Die()

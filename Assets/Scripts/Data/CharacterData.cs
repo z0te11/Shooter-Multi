@@ -4,6 +4,5 @@ using UnityEngine;
 
 public class CharacterData : MonoBehaviour
 {
-    public InventarItems inventory;
-    private List<IItem> _items;
+    public PlayerStatsSettings playerStatsSettings;
 }

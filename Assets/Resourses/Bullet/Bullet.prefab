@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 30
-  isRotate: 0
+  isRotateAim: 0
 --- !u!114 &8268968618568765565
 MonoBehaviour:
   m_ObjectHideFlags: 0

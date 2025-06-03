@@ -2,42 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-using Zenject;
 using Photon.Pun;
 using Photon.Realtime;
+using Zenject;
 
 public class SpawnSystem : MonoBehaviour
 {
     public static Action onPlayerSpawn;
     [SerializeField] private Transform[] _spawnsForPlayer;
-    [SerializeField] private Transform[] _spawnsForEnemys;
     private ISettings _settings;
-
     public static SpawnSystem instance;
-    [Inject]
-    public void Construct(ISettings settings)
-    {
-        _settings = settings;
-    }
 
     private void Awake()
     {
         if (instance == null) instance = this;
     }
-
-    public void StartSpawnEnemy()
+    
+    [Inject]
+    public void Construct(ISettings settings)
     {
-        if (_settings.Enemy != null) StartCoroutine(WaitAndSpawning(_settings.Enemy, _settings.DelaySpawn));
-    }
-
-    private IEnumerator WaitAndSpawning(GameObject go, float waitTime)
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(waitTime);
-            
-            SpawnUnit(go, _spawnsForEnemys[UnityEngine.Random.Range(0, _spawnsForEnemys.Length)].position);
-        }
+        _settings = settings;
     }
 
     public void SpawnUnit(GameObject go, Vector3 pos)
@@ -46,11 +30,17 @@ public class SpawnSystem : MonoBehaviour
 
         var newUnit = PhotonNetwork.Instantiate(go.name, pos, Quaternion.identity);
         newUnit.GetComponent<Health>().SetHealth(_settings.HealthEnemy);
-        newUnit.GetComponent<DamageAbilityTarget>().SetDamage(_settings.DamageEnemy);
-
+        if (newUnit.TryGetComponent<DamageAbilityTarget>(out DamageAbilityTarget damageAbilty))
+        {
+            damageAbilty.SetDamage(_settings.DamageEnemy);
+        }
+        if (newUnit.TryGetComponent<ShootAbility>(out ShootAbility damageShootAbilty))
+        {
+            damageShootAbilty.SetDamage(_settings.DamageEnemy);
+        }
     }
 
-    public void SpawnPlayer( )
+    public void SpawnPlayer()
     {
         var id = PhotonNetwork.LocalPlayer.ActorNumber;
         if (id > (_spawnsForPlayer.Length + 1))
@@ -67,20 +57,14 @@ public class SpawnSystem : MonoBehaviour
         onPlayerSpawn?.Invoke();
     }
 
-    public void SpawnBullet(GameObject go, Transform trans, float damage, TypeOfBuff typeOfBuff)
+    public void SpawnBullet(GameObject go, Transform trans, float damage)
     {
         if (go != null)
         {
             var t = trans;
 
-            var newBullet = PhotonNetwork.Instantiate(go.name, t.position, t.rotation);
+            var newBullet = PhotonNetwork.Instantiate(go.name, new Vector3(t.position.x, t.position.y + 1, t.position.z), t.rotation);
             newBullet.GetComponent<DamageAbilityTarget>().damage = damage;
-
-            if (typeOfBuff == TypeOfBuff.Reflect)
-            {
-                Destroy(newBullet.GetComponent<DestroyerAbility>());
-                ReflectAbility ra = newBullet.AddComponent(typeof(ReflectAbility)) as ReflectAbility;
-            }
         }
     }
 
@@ -90,7 +74,7 @@ public class SpawnSystem : MonoBehaviour
         {
             var t = trans;
 
-            var newPickUp = PhotonNetwork.Instantiate(go.name, t.position, t.rotation);
+            var newPickUp = PhotonNetwork.Instantiate(go.name, new Vector3(t.position.x, t.position.y + 1, t.position.z), t.rotation);
         }        
     }
 }

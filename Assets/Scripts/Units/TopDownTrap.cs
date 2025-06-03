@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class TopDownTrap : StaticUnit
+public class TopDownTrap : StaticObject
 {
     [SerializeField] public Vector3 newPos;
 

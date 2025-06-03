@@ -5,7 +5,8 @@ using UnityEngine;
     public enum TypeOfBuff
     {
         None,
-        Reflect,
         IncreaseDamage,
-        ReduceDamage
+        IncreaseArmor,
+        IncreaseSpeed,
+        IncreaseWeapon
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelUpHealth : MonoBehaviour, ILevelUp
 {
+    public float upHealth;
     private Health _healthComp;
     public void LevelUp(ExperiancePlayer data, int level)
     {
@@ -12,6 +13,6 @@ public class LevelUpHealth : MonoBehaviour, ILevelUp
             _healthComp = GetComponent<Health>();
             if (_healthComp != null) return;
         }
-        _healthComp.Healths += 20;
+        _healthComp.IncreaseMaxHealth(upHealth);
     }
 }
