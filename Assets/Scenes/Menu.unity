@@ -905,23 +905,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3141409235838824493, guid: deafd5691314f5e45bb5678c46e4745a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3141409235838824493, guid: deafd5691314f5e45bb5678c46e4745a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1645300142}
     - target: {fileID: 3141409235838824493, guid: deafd5691314f5e45bb5678c46e4745a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3141409235838824493, guid: deafd5691314f5e45bb5678c46e4745a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
+      value: StartGame
       objectReference: {fileID: 0}
     - target: {fileID: 3141409235838824493, guid: deafd5691314f5e45bb5678c46e4745a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneLoadManager, TestProject
+      value: MenuManager, TestProject
       objectReference: {fileID: 0}
     - target: {fileID: 3141409235838824493, guid: deafd5691314f5e45bb5678c46e4745a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument

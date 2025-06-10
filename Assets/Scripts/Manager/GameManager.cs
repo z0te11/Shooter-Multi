@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using System;
 using UnityEngine;
 using Zenject;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,6 +33,17 @@ public class GameManager : MonoBehaviour
         if (playerID == 1) waveController.StartWave();
         onGameStarted?.Invoke();
     }
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ExitToMenu()
+    {
+        SceneLoadManager.LoadScene("Menu");
+    }
+
+    
 
 
 }
