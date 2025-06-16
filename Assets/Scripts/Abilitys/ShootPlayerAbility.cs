@@ -57,7 +57,6 @@ public class ShootPlayerAbility : ShootAbility, IReload
             }
             SpawnSystem.instance.SpawnBullet(bullet, this.transform, Damage);
             StatisticCollector.instance.CountShootPlayer++;
-            // FMODUnity.RuntimeManager.PlayOneShot( "event:/Shoot" );
         }
     }
 

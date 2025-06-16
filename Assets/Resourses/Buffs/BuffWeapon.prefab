@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3799788977045130383, guid: 600e5961f0d35d641b383662249c3bac, type: 3}
       propertyPath: settingsBuff.valueBuff
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3799788977045130383, guid: 600e5961f0d35d641b383662249c3bac, type: 3}
       propertyPath: settingsBuff.typeOfBuff
