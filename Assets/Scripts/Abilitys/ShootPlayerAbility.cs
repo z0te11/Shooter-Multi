@@ -56,7 +56,8 @@ public class ShootPlayerAbility : ShootAbility, IReload
                 var bewShootEffect = Instantiate(_shootEffect, transform.position, transform.rotation, this.transform);
             }
             SpawnSystem.instance.SpawnBullet(bullet, this.transform, Damage);
-            FMODUnity.RuntimeManager.PlayOneShot( "event:/Shoot" );
+            StatisticCollector.instance.CountShootPlayer++;
+            // FMODUnity.RuntimeManager.PlayOneShot( "event:/Shoot" );
         }
     }
 

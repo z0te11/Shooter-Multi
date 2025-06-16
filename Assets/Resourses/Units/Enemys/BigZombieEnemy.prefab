@@ -1049,6 +1049,7 @@ GameObject:
   - component: {fileID: 4152522073843429239}
   - component: {fileID: 7997883593479671032}
   - component: {fileID: 4128228884931219927}
+  - component: {fileID: 5884868544480282330}
   m_Layer: 0
   m_Name: BigZombieEnemy
   m_TagString: Enemy
@@ -1260,6 +1261,7 @@ MonoBehaviour:
   dieActions:
   - {fileID: 9138341045789972886}
   - {fileID: 1650047763000487474}
+  - {fileID: 5884868544480282330}
 --- !u!114 &9138341045789972886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1370,6 +1372,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _armorStat: 5
+--- !u!114 &5884868544480282330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008217247924006420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53577774b8ac44746851273d682fe2eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeOfEnemy: 3
 --- !u!1 &4159168562421201612
 GameObject:
   m_ObjectHideFlags: 0
