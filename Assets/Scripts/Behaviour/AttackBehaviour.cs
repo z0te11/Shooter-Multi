@@ -1,5 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class AttackBehaviour : BehaviourComponent
@@ -11,8 +11,13 @@ public class AttackBehaviour : BehaviourComponent
     protected Ability[] _abilitys;
     protected List<AbilityType> abilityTypeList = new List<AbilityType>();
     private Transform _player;
+    private List<GameObject> _playersGO;
     private float _attackTime = float.MinValue;
 
+    private void Awake()
+    {
+        _playersGO = GameObject.FindGameObjectsWithTag("Player").ToList<GameObject>();
+    }
     private void Start()
     {
         _abilitysTarget = GetComponents<AbilityTarget>();
@@ -24,16 +29,33 @@ public class AttackBehaviour : BehaviourComponent
     }
     public override float Evaluate()
     {
-        if (GameManager.instance.currentPlayer != null)
+        if (FindTarget() != null)
         {
-            if (GameManager.instance.currentPlayer.GetComponent<InvisibleAbility>().isInvisible) return 0f;
-            _player = GameManager.instance.currentPlayer.transform;
+            _player = FindTarget().transform;
+            if (_player.gameObject.GetComponent<InvisibleAbility>().isInvisible) return 0f;
+            //_player = GameManager.instance.GetPlayer().transform;
 
             float dist = Vector3.Distance(_player.position, transform.position);
 
             if (dist < distanceToAttack) return 0.9f;
         } 
         return 0f;
+    }
+
+    private GameObject FindTarget()
+    {
+        float dist = 0f;
+        GameObject newTarget = null;
+        foreach (var player in _playersGO)
+        {
+            float playerDist = Vector3.Distance(player.transform.position, transform.position);
+            if (playerDist > dist)
+            {
+                dist = playerDist;
+                newTarget = player;
+            }
+        }
+        return newTarget;
     }
 
     public override void Behave()

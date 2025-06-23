@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InvisibleButton : MonoBehaviour
@@ -7,9 +5,9 @@ public class InvisibleButton : MonoBehaviour
     private InvisibleAbility _invisAbility;
     public void UseInvisible()
     {
-        if (GameManager.instance.currentPlayer != null)
+        if (GameManager.instance.GetPlayer() != null)
         {
-            if (_invisAbility == null) _invisAbility = GameManager.instance.currentPlayer.GetComponent<InvisibleAbility>();
+            if (_invisAbility == null) _invisAbility = GameManager.instance.GetPlayer().GetComponent<InvisibleAbility>();
             _invisAbility.Execute();
         }
     }

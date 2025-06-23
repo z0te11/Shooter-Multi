@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
@@ -7,9 +5,25 @@ using Photon.Realtime;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
+    public override void OnEnable()
+    {
+        base.OnEnable();
+        EndGameController.onGameEnded += DisconnectPLayer;
+    }
+
+    public override void OnDisable()
+    {
+        base.OnDisable();
+        EndGameController.onGameEnded -= DisconnectPLayer;
+    }
     private void Awake()
     {
-        PhotonNetwork.ConnectUsingSettings();
+        if (!PhotonNetwork.IsConnected)
+        {
+            PhotonNetwork.AutomaticallySyncScene = true;
+            PhotonNetwork.ConnectUsingSettings();
+            Debug.Log("ConnectUsingSettings");
+        }
     }
 
     public override void OnConnectedToMaster()
@@ -20,6 +34,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             IsVisible = false
         };
         PhotonNetwork.JoinOrCreateRoom("test", options, TypedLobby.Default);
+        Debug.Log("Connected To Master");
     }
 
     public override void OnJoinedRoom()
@@ -27,7 +42,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         var id = PhotonNetwork.LocalPlayer.ActorNumber;
         Debug.Log("Joined Room with " + PhotonNetwork.CurrentRoom.PlayerCount + " players and ID is " + id);
         GameManager.instance.Play(id);
-        
+    }
+
+    public override void OnJoinRandomFailed(short returnCode, string message)
+    {
+        Debug.Log("Не удалось найти комнату, создаём новую...");
+        PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 2 });
     }
 
     public void SayHelllo()
@@ -39,5 +59,19 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public void Hello(byte playerId)
     {
         Debug.Log($"Player Id {playerId} said Hello!");
+    }
+
+    public void DisconnectPLayer()
+    {
+        if (PhotonNetwork.IsConnected)
+        {
+            PhotonNetwork.Disconnect();
+            Debug.Log("Disconnect From Server");
+        }
+        if (PhotonNetwork.InRoom)
+        {
+            PhotonNetwork.LeaveRoom();
+            Debug.Log("Leave from room");
+        }
     }
 }

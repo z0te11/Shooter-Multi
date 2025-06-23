@@ -1,11 +1,9 @@
-using System;
 using UnityEngine;
 using Photon.Pun;
 using Zenject;
 
 public class SpawnSystem : MonoBehaviour
 {
-    public static Action onPlayerSpawn;
     [SerializeField] private Transform[] _spawnsForPlayer;
     private ISettings _settings;
     public static SpawnSystem instance;
@@ -37,21 +35,20 @@ public class SpawnSystem : MonoBehaviour
         }
     }
 
-    public void SpawnPlayer()
+    public GameObject SpawnPlayer()
     {
         var id = PhotonNetwork.LocalPlayer.ActorNumber;
         if (id > (_spawnsForPlayer.Length + 1))
         {
             Debug.LogError("NO SPAWN POINT");
-            return;
+            return null;
         }
         else
         {
             var newPlayer = PhotonNetwork.Instantiate(_settings.Player.name, _spawnsForPlayer[id - 1].position, Quaternion.identity);
-            GameManager.instance.currentPlayer = newPlayer;
+            Debug.Log("Spawn Player");
+            return newPlayer;
         }
-
-        onPlayerSpawn?.Invoke();
     }
 
     public void SpawnBullet(GameObject go, Transform trans, float damage)

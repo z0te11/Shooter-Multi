@@ -113,7 +113,7 @@ public class ShootPlayerAbility : ShootAbility, IReload
     {
         this._settingBuffs.Add(setBuff);
         shootDelay -= setBuff.valueBuff;
-        startTimeReload -= setBuff.valueBuff;
+        startTimeReload -= setBuff.valueBuff + 1.2f;
         StartCoroutine(EndingBuff(setBuff));
         isPlayerWeaponBuffed?.Invoke(setBuff.timeBuff);
         Debug.Log("Buff " + setBuff.typeOfBuff.ToString());

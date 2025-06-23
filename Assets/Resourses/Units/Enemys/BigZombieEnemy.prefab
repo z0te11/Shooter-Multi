@@ -1244,7 +1244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _armored: {fileID: 4128228884931219927}
   onDieManager: {fileID: 6397091527804803720}
-  _health: 20
+  _health: 80
   _maxHealth: 0
   animController: {fileID: 3846854194723664114}
 --- !u!114 &6397091527804803720

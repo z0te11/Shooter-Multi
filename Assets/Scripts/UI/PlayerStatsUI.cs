@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,7 +22,7 @@ public class PlayerStatsUI : MonoBehaviour
 
     private void OnEnable()
     {
-        SpawnSystem.onPlayerSpawn += SubEventPlayer;
+        GameManager.onPlayerSpawn += SubEventPlayer;
     }
 
     private void OnDisable()
@@ -49,12 +47,12 @@ public class PlayerStatsUI : MonoBehaviour
         }
         if (_playerHealth != null) _playerHealth.onPlayerHealthChanged -= ShowHpPlayer;
         if (_playerExp != null) _playerExp.onPlayerLevelChanged -= ShowLevelPlayer;
-        SpawnSystem.onPlayerSpawn -= SubEventPlayer;
+        GameManager.onPlayerSpawn -= SubEventPlayer;
     }
 
-    private void SubEventPlayer()
+    private void SubEventPlayer(GameObject player)
     {
-        var playerObj = GameManager.instance.currentPlayer;
+        var playerObj = player;
         if (playerObj.TryGetComponent<PlayerArmor>(out PlayerArmor armor))
         {
             _playerArmor = armor;
@@ -137,24 +135,32 @@ public class PlayerStatsUI : MonoBehaviour
 
     private void ShowBuffDamagePlayer(float isBuffed)
     {
+        _buffDamage.gameObject.SetActive(true);
         _buffDamage.fillAmount = 1;
         _timeBuffDamage = isBuffed;
+        Debug.Log("Show Buff Damage");
     }
 
     private void ShowBuffSpeedPlayer(float isBuffed)
     {
+        _buffSpeed.gameObject.SetActive(true);
         _buffSpeed.fillAmount = 1;
         _timeBuffSpeed = isBuffed;
+        Debug.Log("Show Buff Speed");
     }
     private void ShowBuffWeaponPlayer(float isBuffed)
     {
+        _buffReload.gameObject.SetActive(true);
         _buffReload.fillAmount = 1;
         _timeBuffWeapon = isBuffed;
+        Debug.Log("Show Buff Weapon");
     }
     private void ShowBuffArmorPlayer(float isBuffed)
     {
+        _buffArmor.gameObject.SetActive(true);
         _buffArmor.fillAmount = 1;
         _timeBuffArmor = isBuffed;
+        Debug.Log("Show Buff Armor");
     }
 
     private void Update()

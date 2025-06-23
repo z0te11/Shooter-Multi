@@ -1,16 +1,18 @@
 using System;
 using UnityEngine;
 using Zenject;
-using UnityEngine.SceneManagement;
+using Photon.Pun;
 
 public class GameManager : MonoBehaviour
 {
+    public static Action<GameObject> onPlayerSpawn;
     public static Action onGameStarted;
     public static GameManager instance;
-    public GameObject currentPlayer;
+
 
     [SerializeField] public SpawnSystem spawnSystem;
     [SerializeField] public WaveContorller waveController;
+    private GameObject _currentPlayer;
     private PlayerStats _stats;
     private ISettings _settings;
 
@@ -26,21 +28,37 @@ public class GameManager : MonoBehaviour
         _settings = settings;
     }
 
+    public GameObject GetPlayer()
+    {
+        if (_currentPlayer != null) return _currentPlayer;
+        else return null;
+    }
+
     public void Play(int playerID)
     {
-        //UnPause;
-        spawnSystem.SpawnPlayer();
+        Debug.Log("Start Play");
+        _currentPlayer = spawnSystem.SpawnPlayer();
+        if (_currentPlayer != null) onPlayerSpawn?.Invoke(_currentPlayer);
+        else
+        {
+            Debug.Log("Cant start game without Player");
+            return;
+        }
         if (playerID == 1) waveController.StartWave();
         onGameStarted?.Invoke();
     }
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.LoadLevel(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     public void ExitToMenu()
     {
-        SceneLoadManager.LoadScene("Menu");
+        GetComponent<EndGameController>().EndGame();
+        PhotonNetwork.LoadLevel("Menu");
     }
 
     

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
@@ -14,7 +12,7 @@ public class InventarItems : MonoBehaviour
         if (itemAbility != null)
         {
             if (whoTarget != null) itemAbility.target = whoTarget;
-            else itemAbility.target = GameManager.instance.currentPlayer;
+            else itemAbility.target = GameManager.instance.GetPlayer();
         }
     }
 }

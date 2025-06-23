@@ -41,6 +41,7 @@ MonoBehaviour:
   - RespawnSpaceship
   - Hello
   - SetHealth
+  - RPC_ReloadScene
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

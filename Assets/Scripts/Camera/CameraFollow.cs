@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
@@ -7,17 +5,17 @@ public class CameraFollow : MonoBehaviour
     private Transform _player;
     private void OnEnable()
     {
-        SpawnSystem.onPlayerSpawn += StartFolowPlayer;
+        GameManager.onPlayerSpawn += StartFolowPlayer;
     }
 
     private void OnDisable()
     {
-        SpawnSystem.onPlayerSpawn -= StartFolowPlayer;
+        GameManager.onPlayerSpawn -= StartFolowPlayer;
     }
 
-    private void StartFolowPlayer()
+    private void StartFolowPlayer(GameObject player)
     {
-        _player = GameManager.instance.currentPlayer.transform;
+        _player = player.transform;
     }
 
     private void Update()

@@ -22,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3799788977045130383, guid: 600e5961f0d35d641b383662249c3bac, type: 3}
       propertyPath: settingsBuff.timeBuff
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3799788977045130383, guid: 600e5961f0d35d641b383662249c3bac, type: 3}
       propertyPath: settingsBuff.valueBuff
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 3799788977045130383, guid: 600e5961f0d35d641b383662249c3bac, type: 3}
       propertyPath: settingsBuff.typeOfBuff
