@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +11,6 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] public bool isInteractOnlyWithUnit = false;
     [SerializeField] public bool isCanInteractWithAll = false;
     protected List<AbilityType> abilityTypeList = new List<AbilityType>();
-
 
     protected void Awake()
     {
