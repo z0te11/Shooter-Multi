@@ -42,6 +42,7 @@ MonoBehaviour:
   - Hello
   - SetHealth
   - RPC_ReloadScene
+  - RPC_RestartGame
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

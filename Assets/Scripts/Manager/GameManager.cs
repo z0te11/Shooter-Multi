@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using Zenject;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -58,7 +59,7 @@ public class GameManager : MonoBehaviour
     public void ExitToMenu()
     {
         GetComponent<EndGameController>().EndGame();
-        PhotonNetwork.LoadLevel("Menu");
+        SceneManager.LoadScene("Menu");
     }
 
     

@@ -213,7 +213,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 1211920787665647420}
   cacheVersion: 131848
-  cacheTime: 638851783891530994
+  cacheTime: 638876825306050593
   SerializableEventsDict:
   - key: event:/Hit
     index: 0
@@ -322,10 +322,10 @@ MonoBehaviour:
     Studio/GameTwinStick/Build/Desktop/Master.strings.bank"
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638851783891530994
+  lastModified: 638876825306050593
   FileSizes:
   - Name: Desktop
-    Value: 1028
+    Value: 1202
   Exists: 1
 --- !u!114 &1585509963535226080
 MonoBehaviour:
@@ -532,10 +532,10 @@ MonoBehaviour:
     Studio/GameTwinStick/Build/Desktop/Master.bank"
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638851783891520753
+  lastModified: 638876825306035497
   FileSizes:
   - Name: Desktop
-    Value: 625952
+    Value: 626528
   Exists: 1
 --- !u!114 &9100392211518166142
 MonoBehaviour:
