@@ -9,7 +9,7 @@ public class WaitBehaviour : BehaviourComponent
     public override float Evaluate()
     {
         navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        return 0.5f;
+        return 0.2f;
     }
     public override void Behave()
     {

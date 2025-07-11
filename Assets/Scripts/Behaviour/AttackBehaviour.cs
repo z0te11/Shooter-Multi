@@ -37,7 +37,7 @@ public class AttackBehaviour : BehaviourComponent
 
             float dist = Vector3.Distance(_player.position, transform.position);
 
-            if (dist < distanceToAttack) return 0.9f;
+            if (dist < distanceToAttack) return 0.8f;
         } 
         return 0f;
     }

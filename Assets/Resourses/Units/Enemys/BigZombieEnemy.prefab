@@ -1156,6 +1156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceToPlayer: 0.5
   animController: {fileID: 3846854194723664114}
+  _speed: 1.5
 --- !u!114 &-3414900735606967163
 MonoBehaviour:
   m_ObjectHideFlags: 0

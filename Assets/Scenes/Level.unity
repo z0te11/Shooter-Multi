@@ -3124,7 +3124,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 454087745}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5848420151150000868}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &454087745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16260,6 +16272,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 6331756601263282445, guid: e8fd11b5edda66445a39066cd5cdb564, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7502280008372019213, guid: e8fd11b5edda66445a39066cd5cdb564, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -16358,6 +16374,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8fd11b5edda66445a39066cd5cdb564, type: 3}
+--- !u!1 &5848420151150000868 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6331756601263282445, guid: e8fd11b5edda66445a39066cd5cdb564, type: 3}
+  m_PrefabInstance: {fileID: 5848420151150000867}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7516585060825144582
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class MoveToPlayerBehaviour : BehaviourComponent
 {
     [SerializeField] public float distanceToPlayer;
     [SerializeField] private AnimController animController;
+    [SerializeField] private float _speed;
     private GameObject _target;
     private NavMeshAgent _navMeshAgent;
     private List<GameObject> _playersGO;
@@ -29,12 +30,16 @@ public class MoveToPlayerBehaviour : BehaviourComponent
 
         float dist = Vector3.Distance(_target.transform.position, transform.position);
 
-        if (dist > distanceToPlayer) return 0.8f;
+        if (dist > distanceToPlayer) return 0.5f;
         return 0f;
     }
     public override void Behave()
     {
-        if (FindTarget() != null) _navMeshAgent.destination = _target.transform.position;
+        if (FindTarget() != null)
+        {
+            _navMeshAgent.destination = _target.transform.position;
+            _navMeshAgent.speed = _speed;
+        }
         if (animController != null) animController.Move(true);
     }
 

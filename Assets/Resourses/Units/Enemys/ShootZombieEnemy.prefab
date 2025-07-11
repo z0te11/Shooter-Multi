@@ -1035,6 +1035,7 @@ GameObject:
   - component: {fileID: 2812137454982630545}
   - component: {fileID: 2512834662661089592}
   - component: {fileID: 3732634443391959870}
+  - component: {fileID: 310591346043339195}
   - component: {fileID: 7583220681752958941}
   - component: {fileID: -3414900735606967163}
   - component: {fileID: 3919862465445553429}
@@ -1141,6 +1142,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animController: {fileID: 3846854194723664114}
+--- !u!114 &310591346043339195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008217247924006420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11bb5155451459469c90da27dcc44ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToPlayer: 10
+  animController: {fileID: 3846854194723664114}
+  _speed: 4
 --- !u!114 &7583220681752958941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1155,6 +1171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceToPlayer: 20
   animController: {fileID: 3846854194723664114}
+  _speed: 3.5
 --- !u!114 &-3414900735606967163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1359,7 +1376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4186925322972517638, guid: 1a3341b7615df634daf19fbde74a1fa3, type: 3}
-  shootDelay: 0
+  _shootDelay: 0
   _shootEffect: {fileID: 1364721190298166145, guid: b25c8d577b1e59c418a3db28055e4bbd, type: 3}
   _damage: 5
 --- !u!114 &5948065247568142699

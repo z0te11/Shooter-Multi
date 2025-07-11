@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 674692887563923721, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
+      propertyPath: _newSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 715236368329122799, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
       propertyPath: sceneViewId
       value: 0
@@ -63,6 +67,14 @@ PrefabInstance:
     - target: {fileID: 715236368329122799, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
       propertyPath: ObservedComponents.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049408038858717277, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2368340278956077524, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
+      propertyPath: damage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4008217247924006420, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
       propertyPath: m_Name
