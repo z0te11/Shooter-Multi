@@ -43,6 +43,7 @@ MonoBehaviour:
   - SetHealth
   - RPC_ReloadScene
   - RPC_RestartGame
+  - ShowMessage
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

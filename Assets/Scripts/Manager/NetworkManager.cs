@@ -5,16 +5,18 @@ using Photon.Realtime;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
+    public static int playerId;
+    [SerializeField] private GameObject _startButton;
     public override void OnEnable()
     {
         base.OnEnable();
-        EndGameController.onGameEnded += DisconnectPLayer;
+        //EndGameController.onGameEnded += DisconnectPLayer;
     }
 
     public override void OnDisable()
     {
         base.OnDisable();
-        EndGameController.onGameEnded -= DisconnectPLayer;
+        //EndGameController.onGameEnded -= DisconnectPLayer;
     }
     private void Awake()
     {
@@ -24,6 +26,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             PhotonNetwork.ConnectUsingSettings();
             Debug.Log("ConnectUsingSettings");
         }
+        else _startButton.SetActive(true);
     }
 
     public override void OnConnectedToMaster()
@@ -39,9 +42,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        var id = PhotonNetwork.LocalPlayer.ActorNumber;
-        Debug.Log("Joined Room with " + PhotonNetwork.CurrentRoom.PlayerCount + " players and ID is " + id);
-        GameManager.instance.Play(id);
+        playerId = PhotonNetwork.LocalPlayer.ActorNumber;
+        Debug.Log("Joined Room with " + PhotonNetwork.CurrentRoom.PlayerCount + " players and ID is " + playerId);
+        _startButton.SetActive(true);
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)

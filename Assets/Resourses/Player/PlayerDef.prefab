@@ -947,6 +947,7 @@ GameObject:
   - component: {fileID: 8056130328234952375}
   - component: {fileID: 4220616224964968227}
   - component: {fileID: 1851884763894365682}
+  - component: {fileID: 4327518408512015427}
   - component: {fileID: 1740973050227037869}
   - component: {fileID: -720221328616003789}
   - component: {fileID: 3818035969286869766}
@@ -985,6 +986,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 669956594090265819}
+  - {fileID: 8175075703116935518}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &8056130328234952375
@@ -1058,6 +1060,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &4327518408512015427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994513295872578221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6183a7313c694654e85361af9fa79fc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chatBubblePrefab: {fileID: 2192283686900015666, guid: bdb8a0fe9636dda46b6d0662b5ee8794, type: 3}
+  messagePosition: {fileID: 8175075703116935518}
+  predefinedMessages:
+  - "\u041F\u043E\u043C\u043E\u0433\u0438!"
+  - "\u0417\u0430 \u043C\u043D\u043E\u0439!"
+  - "\u0421\u043F\u0430\u0441\u0438\u0431\u043E!"
+  - "\u0425\u043E\u0440\u043E\u0448\u0430\u044F \u0438\u0433\u0440\u0430!"
 --- !u!114 &1740973050227037869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1099,7 +1120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4186925322972517638, guid: 0e0e12e024ce6de449ed69fc11c9f9b3, type: 3}
-  shootDelay: 0.2
+  _shootDelay: 0
   _shootEffect: {fileID: 1364721190298166145, guid: b25c8d577b1e59c418a3db28055e4bbd, type: 3}
   _damage: 5
   startAmmoCount: 20
@@ -2243,6 +2264,37 @@ Transform:
   m_Children:
   - {fileID: 4664727255165611096}
   m_Father: {fileID: 2894293655556297324}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5983054954556848338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8175075703116935518}
+  m_Layer: 0
+  m_Name: ChatPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8175075703116935518
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5983054954556848338}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.93, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2633708431066844448}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6163587571512937882
 GameObject:

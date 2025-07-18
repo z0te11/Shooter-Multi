@@ -24,14 +24,14 @@ public class SpawnSystem : MonoBehaviour
         if (!go.GetComponent<Unit>()) return;
 
         var newUnit = PhotonNetwork.Instantiate(go.name, pos, Quaternion.identity);
-        newUnit.GetComponent<Health>().SetHealth(_settings.HealthEnemy);
+        //newUnit.GetComponent<Health>().SetHealth(_settings.HealthEnemy);
         if (newUnit.TryGetComponent<DamageAbilityTarget>(out DamageAbilityTarget damageAbilty))
         {
-            damageAbilty.SetDamage(_settings.DamageEnemy);
+            //damageAbilty.SetDamage(_settings.DamageEnemy);
         }
         if (newUnit.TryGetComponent<ShootAbility>(out ShootAbility damageShootAbilty))
         {
-            damageShootAbilty.SetDamage(_settings.DamageEnemy);
+            //damageShootAbilty.SetDamage(_settings.DamageEnemy);
         }
     }
 

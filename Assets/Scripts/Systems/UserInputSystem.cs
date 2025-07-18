@@ -8,6 +8,10 @@ public class UserInputSystem : MonoBehaviour
     private InputAction _mainAbilityAction;
     private InputAction _mainAssistAbilityAction;
     private InputAction _secondAbilityAction;
+    private InputAction _firstMessage;
+    private InputAction _secondMessage;
+    private InputAction _thirdMessage;
+    private InputAction _fourthMessage;
     public static Vector2 moveInput;
     public static float mainAbilityInput;
     public static float mainAssistAbilityInput;
@@ -21,10 +25,15 @@ public class UserInputSystem : MonoBehaviour
         SetSecondAbilityAction();
         SetMainAssistAbilityAction();
         SetPauseButton();
+        SetChatButtons();
     }
 
     private void OnDisable()
     {
+        _firstMessage.Disable();
+        _secondMessage.Disable();
+        _thirdMessage.Disable();
+        _fourthMessage.Disable();
         _moveAction.Disable();
         _mainAbilityAction.Disable();
         _secondAbilityAction.Disable();
@@ -81,6 +90,21 @@ public class UserInputSystem : MonoBehaviour
     {
         _usePauseAction = new InputAction("pauseButton", binding: "<Keyboard>/Escape");
         _usePauseAction.Enable();
+    }
+
+    private void SetChatButtons()
+    {
+        _firstMessage = new InputAction("firstMessage", binding: "<Keyboard>/1");
+        _firstMessage.Enable();
+
+        _secondMessage = new InputAction("firstMessage", binding: "<Keyboard>/2");
+        _secondMessage.Enable();
+
+        _thirdMessage = new InputAction("firstMessage", binding: "<Keyboard>/3");
+        _thirdMessage.Enable();
+
+        _fourthMessage = new InputAction("firstMessage", binding: "<Keyboard>/4");
+        _fourthMessage.Enable();
     }
 
 }

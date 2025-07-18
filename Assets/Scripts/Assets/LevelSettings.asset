@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b651c4aad6c02f47aaaf1d49162b95c, type: 3}
   m_Name: LevelSettings
   m_EditorClassIdentifier: 
-  player: {fileID: 2001107220961077666, guid: 3e793660e8f22424c9c424a985414e6d, type: 3}
+  player: {fileID: 2001107220961077666, guid: 5367ed60ca6ec2c4e8aecc9de3b3c782, type: 3}
   enemys:
   - {fileID: 4008217247924006420, guid: 4b6067031fbfbaf418945fb502f067f1, type: 3}
   - {fileID: 4008217247924006420, guid: c9d16c523d5ff00489f1d89cba7de40c, type: 3}
   - {fileID: 4008217247924006420, guid: 8d42aa3fa0585eb49a9e3cd7b2f6d743, type: 3}
   healthEnemy: 20
   damageEnemy: 15
-  delaySpawn: 30
+  delaySpawn: 40

@@ -8,9 +8,16 @@ public class PauseManager : MonoBehaviour
     private bool isPaused = false;
     private bool isGameEnd = false;
 
+    public static PauseManager instance;
+
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+    }
+
     private void OnEnable()
     {
-        EndGameController.onGameEnded += TrackEndGame;   
+        EndGameController.onGameEnded += TrackEndGame;
     }
 
     private void OnDisable()

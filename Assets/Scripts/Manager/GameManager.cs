@@ -35,9 +35,11 @@ public class GameManager : MonoBehaviour
         else return null;
     }
 
-    public void Play(int playerID)
+    public void Play()
     {
+        PauseManager.instance.ResumeGame();
         Debug.Log("Start Play");
+        var playerID = NetworkManager.playerId;
         _currentPlayer = spawnSystem.SpawnPlayer();
         if (_currentPlayer != null) onPlayerSpawn?.Invoke(_currentPlayer);
         else
@@ -45,7 +47,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Cant start game without Player");
             return;
         }
-        if (playerID == 1) waveController.StartWave();
+        if (PhotonNetwork.IsMasterClient) waveController.StartWave();
         onGameStarted?.Invoke();
     }
     public void RestartGame()
