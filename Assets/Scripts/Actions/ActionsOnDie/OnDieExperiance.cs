@@ -5,7 +5,7 @@ using UnityEngine;
 public class OnDieExperiance : MonoBehaviour, IDie
 {
     public int experianceValue;
-    private List<GameObject> _playersGO;
+    public List<GameObject> _playersGO;
 
     private void Awake()
     {
@@ -17,6 +17,7 @@ public class OnDieExperiance : MonoBehaviour, IDie
         foreach (var player in _playersGO)
         {
             player.GetComponent<ExperiancePlayer>().AddExperiance(newXP);
+            Debug.Log(newXP + player.ToString());
         }
 
     }

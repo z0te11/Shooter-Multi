@@ -44,12 +44,12 @@ public class AttackBehaviour : BehaviourComponent
 
     private GameObject FindTarget()
     {
-        float dist = 0f;
+        float dist = 1000f;
         GameObject newTarget = null;
         foreach (var player in _playersGO)
         {
             float playerDist = Vector3.Distance(player.transform.position, transform.position);
-            if (playerDist > dist)
+            if (playerDist < dist)
             {
                 dist = playerDist;
                 newTarget = player;

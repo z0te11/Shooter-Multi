@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: DropSettings1
   m_EditorClassIdentifier: 
   dropItems:
-  - {fileID: 5458391783541205584, guid: 3fe8015d66d97d3459a1572e282ea129, type: 3}
-  - {fileID: 259028783170500717, guid: 5d7c6218e6c32ad4db70105ac17eecd6, type: 3}
-  - {fileID: 259028783170500717, guid: 31b78fb1c3f3a7845a3a11be0fce7a74, type: 3}
-  - {fileID: 259028783170500717, guid: f60c4fe556816e74b94e5d9aa17101a6, type: 3}
+  - {fileID: 3488590856519406423, guid: 435d6938b3905864ebe1e3d60f1d4c32, type: 3}
+  - {fileID: 1951265797527224046, guid: d87420b7f0af42d478e9ee6859c64e8e, type: 3}
+  - {fileID: 3082894374013771457, guid: d6bcbd73f52401d469354282570bc20d, type: 3}
+  - {fileID: 7209153392030065242, guid: 1d13af91a4378124b82e34adbb29cecc, type: 3}
   - {fileID: 6731665789154408544, guid: c2c5060fd17b5b94585d87819a51e142, type: 3}
   - {fileID: 1185152910106458325, guid: 22716671124e55a4e88976a4b99a434a, type: 3}
   - {fileID: 1022832343710668361, guid: cfe55457946dbbf4e9a6660df7ad2cb2, type: 3}
