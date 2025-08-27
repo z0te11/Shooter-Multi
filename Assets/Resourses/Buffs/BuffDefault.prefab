@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3048626665116857409}
   - component: {fileID: 6060101801259105184}
   - component: {fileID: -5067738480292354302}
+  - component: {fileID: -9008645887992253139}
   m_Layer: 0
   m_Name: BuffDefault
   m_TagString: Untagged
@@ -88,7 +89,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7086e3fad0d96c45809d4aac71e18f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _typeOfBuff: 1
+  settingsBuff:
+    valueBuff: 0
+    timeBuff: 0
+    typeOfBuff: 0
 --- !u!114 &3048626665116857409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +141,37 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-9008645887992253139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879983843989307216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -752955532
+      Data2: 1119798436
+      Data3: 540304536
+      Data4: 702728769
+    Path: event:/PickUp
+  Event: 
+  EventPlayTrigger: 2
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1594934632665661714
 PrefabInstance:
   m_ObjectHideFlags: 0

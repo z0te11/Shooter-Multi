@@ -5,12 +5,21 @@ using UnityEngine;
 public class ShootAbility : Ability, IBuff
 {
     public GameObject bullet;
-    public float shootDelay;
+    [SerializeField] protected float _shootDelay;
     [SerializeField] protected GameObject _shootEffect;
     [SerializeField] protected float _damage;
     protected float _shootTime = float.MinValue;
     protected List<SettingsBuff> _settingBuffs = new List<SettingsBuff>();
 
+    public virtual float ShootDelay
+    {
+        get { return _shootDelay; }
+        set
+        {
+            if (value > 0.1f) _shootDelay = value;
+            else _shootDelay = 0.1f;
+        }        
+    }
     public virtual float Damage
     {
         get { return _damage; }
@@ -19,7 +28,7 @@ public class ShootAbility : Ability, IBuff
 
     public override void Execute()
     {
-        if (Time.time < _shootTime + shootDelay) return;
+        if (Time.time < _shootTime + ShootDelay) return;
 
         _shootTime = Time.time;
         Shoot();
@@ -49,7 +58,7 @@ public class ShootAbility : Ability, IBuff
     protected virtual void BuffIncreaseWeapon(SettingsBuff setBuff)
     {
         this._settingBuffs.Add(setBuff);
-        shootDelay -= setBuff.valueBuff;
+        ShootDelay -= setBuff.valueBuff;
         StartCoroutine(EndingBuff(setBuff));
         Debug.Log("Buff " + setBuff.typeOfBuff.ToString());
     }
@@ -71,7 +80,7 @@ public class ShootAbility : Ability, IBuff
         if (setBuff.typeOfBuff == TypeOfBuff.IncreaseWeapon)
         {
             this._settingBuffs.Remove(setBuff);
-            shootDelay += setBuff.valueBuff;
+            ShootDelay += setBuff.valueBuff;
         }
         Debug.Log("Unbuff " + setBuff.typeOfBuff.ToString());
     }
@@ -85,6 +94,11 @@ public class ShootAbility : Ability, IBuff
     public void SetDamage(float value)
     {
         Damage = value;
+    }
+
+    public void SetShootDelay(float value)
+    {
+        ShootDelay = value;
     }
 
     public void UpDamage(float value)

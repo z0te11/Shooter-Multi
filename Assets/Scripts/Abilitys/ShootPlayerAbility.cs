@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootPlayerAbility : ShootAbility, IReload
@@ -35,14 +34,14 @@ public class ShootPlayerAbility : ShootAbility, IReload
         if (TryGetComponent<CharacterData>(out CharacterData statsData))
         {
             Damage = statsData.playerStatsSettings.damageStat;
-            shootDelay = statsData.playerStatsSettings.speedDamageStat;
+            ShootDelay = statsData.playerStatsSettings.speedDamageStat;
         }
     }
 
     public override void Execute()
     {
         if (isReloading) return;
-        if (Time.time < _shootTime + shootDelay) return;
+        if (Time.time < _shootTime + ShootDelay) return;
 
         _shootTime = Time.time;
         Shoot();
@@ -57,6 +56,7 @@ public class ShootPlayerAbility : ShootAbility, IReload
                 var bewShootEffect = Instantiate(_shootEffect, transform.position, transform.rotation, this.transform);
             }
             SpawnSystem.instance.SpawnBullet(bullet, this.transform, Damage);
+            StatisticCollector.instance.CountShootPlayer++;
         }
     }
 
@@ -103,7 +103,7 @@ public class ShootPlayerAbility : ShootAbility, IReload
         if (setBuff.typeOfBuff == TypeOfBuff.IncreaseWeapon)
         {
             this._settingBuffs.Remove(setBuff);
-            shootDelay += setBuff.valueBuff;
+            ShootDelay += setBuff.valueBuff;
             startTimeReload += setBuff.valueBuff;
         }
         Debug.Log("Unbuff " + setBuff.typeOfBuff.ToString());
@@ -112,8 +112,8 @@ public class ShootPlayerAbility : ShootAbility, IReload
     protected override void BuffIncreaseWeapon(SettingsBuff setBuff)
     {
         this._settingBuffs.Add(setBuff);
-        shootDelay -= setBuff.valueBuff;
-        startTimeReload -= setBuff.valueBuff;
+        ShootDelay -= setBuff.valueBuff;
+        startTimeReload -= setBuff.valueBuff + 1.2f;
         StartCoroutine(EndingBuff(setBuff));
         isPlayerWeaponBuffed?.Invoke(setBuff.timeBuff);
         Debug.Log("Buff " + setBuff.typeOfBuff.ToString());

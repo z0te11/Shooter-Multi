@@ -1035,6 +1035,7 @@ GameObject:
   - component: {fileID: 2812137454982630545}
   - component: {fileID: 2512834662661089592}
   - component: {fileID: 3732634443391959870}
+  - component: {fileID: 310591346043339195}
   - component: {fileID: 7583220681752958941}
   - component: {fileID: -3414900735606967163}
   - component: {fileID: 3919862465445553429}
@@ -1048,6 +1049,8 @@ GameObject:
   - component: {fileID: 4152522073843429239}
   - component: {fileID: 7997883593479671032}
   - component: {fileID: 9134748968760661307}
+  - component: {fileID: 5948065247568142699}
+  - component: {fileID: 5990266422483217840}
   m_Layer: 0
   m_Name: ShootZombieEnemy
   m_TagString: Enemy
@@ -1139,6 +1142,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animController: {fileID: 3846854194723664114}
+--- !u!114 &310591346043339195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008217247924006420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11bb5155451459469c90da27dcc44ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToPlayer: 10
+  animController: {fileID: 3846854194723664114}
+  _speed: 4
 --- !u!114 &7583220681752958941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1153,6 +1171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceToPlayer: 20
   animController: {fileID: 3846854194723664114}
+  _speed: 3.5
 --- !u!114 &-3414900735606967163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1228,7 +1247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _armored: {fileID: 0}
   onDieManager: {fileID: 6397091527804803720}
-  _health: 20
+  _health: 30
   _maxHealth: 0
   animController: {fileID: 3846854194723664114}
 --- !u!114 &6397091527804803720
@@ -1246,6 +1265,7 @@ MonoBehaviour:
   dieActions:
   - {fileID: 9138341045789972886}
   - {fileID: 1650047763000487474}
+  - {fileID: 5948065247568142699}
 --- !u!114 &9138341045789972886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1356,9 +1376,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4186925322972517638, guid: 1a3341b7615df634daf19fbde74a1fa3, type: 3}
-  shootDelay: 0
+  _shootDelay: 0
   _shootEffect: {fileID: 1364721190298166145, guid: b25c8d577b1e59c418a3db28055e4bbd, type: 3}
   _damage: 5
+--- !u!114 &5948065247568142699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008217247924006420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53577774b8ac44746851273d682fe2eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeOfEnemy: 2
+--- !u!114 &5990266422483217840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008217247924006420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -2052113130
+      Data2: 1239485498
+      Data3: -1972089472
+      Data4: -1064362234
+    Path: event:/Hit
+  Event: 
+  EventPlayTrigger: 2
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &4159168562421201612
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BuffAbilityTarget : AbilityTarget
@@ -16,6 +14,34 @@ public class BuffAbilityTarget : AbilityTarget
         if (b)
         {
             b.Execute(settingsBuff);
+            WriteInStatistic(settingsBuff.typeOfBuff);
+        }
+    }
+
+    private void WriteInStatistic(TypeOfBuff typeBuff)
+    {
+        switch (typeBuff)
+        {
+            case TypeOfBuff.IncreaseDamage:
+                {
+                    StatisticCollector.instance.CountPickUpBuffDamage++;
+                    break;
+                }
+            case TypeOfBuff.IncreaseArmor:
+                {
+                    StatisticCollector.instance.CountPickUpBuffArmor++;
+                    break;
+                }
+            case TypeOfBuff.IncreaseSpeed:
+                {
+                    StatisticCollector.instance.CountPickUpBuffSpeed++;
+                    break;
+                }
+            case TypeOfBuff.IncreaseWeapon:
+                {
+                    StatisticCollector.instance.CountPickUpBuffWeapon++;
+                    break;
+                }
         }
     }
 

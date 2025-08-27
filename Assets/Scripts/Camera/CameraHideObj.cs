@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,17 +9,17 @@ public class CameraHideObj : MonoBehaviour
 
     private void OnEnable()
     {
-        SpawnSystem.onPlayerSpawn += StartPlayer;
+        GameManager.onPlayerSpawn += StartPlayer;
     }
 
     private void OnDisable()
     {
-        SpawnSystem.onPlayerSpawn -= StartPlayer;
+        GameManager.onPlayerSpawn -= StartPlayer;
     }
 
-    private void StartPlayer()
+    private void StartPlayer(GameObject player)
     {
-        _player = GameManager.instance.currentPlayer.transform;
+        _player = player.transform;
     }
 
     private void Update()

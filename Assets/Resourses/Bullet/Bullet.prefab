@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 8836161199099266541}
   - component: {fileID: 4186503270822520072}
   - component: {fileID: -3871951770839317379}
+  - component: {fileID: 4475387328068536623}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -266,6 +267,37 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 0
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &4475387328068536623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4186925322972517638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1372616085
+      Data2: 1075466019
+      Data3: -870242886
+      Data4: 1251771229
+    Path: event:/Shoot
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &3562690520128220032
 PrefabInstance:
   m_ObjectHideFlags: 0

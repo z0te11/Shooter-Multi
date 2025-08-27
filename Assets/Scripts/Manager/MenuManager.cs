@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class MenuManager : MonoBehaviour
 {
@@ -52,6 +51,6 @@ public class MenuManager : MonoBehaviour
     public void StartGame()
     {
         _levelSettings.player = _playersSettings.variantPlayers[_numberPlayer];
-        SceneLoadManager.LoadScene("Level");
+        PhotonNetwork.LoadLevel("Level");
     }
 }

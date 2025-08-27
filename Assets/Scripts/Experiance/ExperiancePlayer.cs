@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
@@ -29,6 +28,7 @@ public class ExperiancePlayer: MonoBehaviour, IExp, IType
     {
         AddExperiance(value);
     }
+    
     public void AddExperiance(int value)
     {
         _exp += value;
@@ -37,7 +37,7 @@ public class ExperiancePlayer: MonoBehaviour, IExp, IType
         {
             _exp -= expToNextLevel;
             LevelUp();
-        } 
+        }
     }
 
     public void LevelUp()
