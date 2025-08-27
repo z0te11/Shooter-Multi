@@ -1,7 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using System;
 using UnityEngine;
+using Photon.Pun;
 using Zenject;
 
 public class WaveContorller : MonoBehaviour
@@ -52,7 +52,9 @@ public class WaveContorller : MonoBehaviour
             if (CountWave > 5) SpawnWave(1);
             if (CountWave > 6) SpawnWave(0);
             CountWave++;
-            yield return new WaitForSeconds(waitTime);
+            int playerCount = PhotonNetwork.CurrentRoom.PlayerCount;
+            Debug.Log(playerCount);
+            yield return new WaitForSeconds(waitTime / playerCount);
         }
     }
 
